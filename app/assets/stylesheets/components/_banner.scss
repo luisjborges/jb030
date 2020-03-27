@@ -6,7 +6,15 @@
   text-align: center;
   padding-top: 40vh;
   max-width: 100%;
-  display: block
+  display: block;
+  h1 {
+    font-size: 100px;
+    font-family: "Helvetica";
+  }
+  p {
+   font-size: 40px;
+    font-family: "Helvetica";
+  }
 }
 
 // .img-fluid. {
