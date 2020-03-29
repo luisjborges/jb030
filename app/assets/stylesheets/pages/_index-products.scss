@@ -1,0 +1,23 @@
+.index-container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family: sans-serif;
+  }
+
+.container > h3 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.container > h5 {
+  text-align: center;
+}
+
+.box {
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 15px;
+  margin: 0 auto;
+  }
