@@ -13,20 +13,31 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_to product_path(@product)
+
+    if @product.save
+      redirect_to @product, notice: "Product was succesfully published."
+    else
+      render :new
+    end
   end
 
   def edit; end
 
   def update
-    @product.update(product_params)
-    redirect_to product_path(@product)
+    if @product.update(product_params)
+      redirect_to @product, notice: "Product was succesfully updated."
+    else
+      render :edit
+    end
   end
 
   def destroy
     @product.destroy
-    redirect_to products_path
+    redirect_to products_path, notice: "Product was succesfully deleted."
+  end
+
+  def top
+    @product = Product.where(price: 40)
   end
 
   private
