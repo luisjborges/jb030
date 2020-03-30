@@ -12,20 +12,20 @@ Product.destroy_all
 
 puts "Database is clean"
 
-puts "Creating products..."
+# puts "Creating products..."
 
-60.times do
-  product = Product.create(
-    title: Faker::Commerce.product_name,
-    color: Faker::Commerce.color,
-    description: Faker::TvShows::Seinfeld.quote,
-    price: rand(10..40),
-    delivery: rand(1..5),
-    fabric: Faker::Commerce.material,
-    size: rand(30..40),
-    photo: 'https://source.unsplash.com/random?sig=123'
-    )
-  puts "Product #{product.id} created"
-end
+# 60.times do
+#   product = Product.create(
+#     title: Faker::Commerce.product_name,
+#     color: Faker::Commerce.color,
+#     description: Faker::TvShows::Seinfeld.quote,
+#     price: rand(10..40),
+#     delivery: rand(1..5),
+#     fabric: Faker::Commerce.material,
+#     size: rand(30..40),
+#     photo: 'https://source.unsplash.com/random?sig=123'
+#     )
+#   puts "Product #{product.id} created"
+# end
 
-puts "Products created"
+# puts "Products created"

@@ -20,6 +20,7 @@
           <%= f.input :color %>
           <%= f.input :fabric %>
           <%= f.input :delivery %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>

@@ -1,5 +1,9 @@
 <h1><%= @product.title %> <%= @product.price %> EUR</h1>
 <p><%= @product.description %></p>
+<% if @product.photo.attached? %>
+  <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <%= link_to 'Back', products_path %>
 <%= link_to 'Edit', edit_product_path(@product) %>
 <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -8,7 +12,5 @@
 <% @product.reviews.each do |review| %>
   <p><%= review.content %></p>
   <p><%= review.rating %></p>
-  <%= link_to 'Delete', review_path(review), method: :delete %>
+  <%= link_to 'Delete', review_path(reviews), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
-
-<%= image_tag @product.photo, alt: @product.title, :class => "card-product" %>

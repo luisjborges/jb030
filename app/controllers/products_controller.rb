@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to @product, notice: "Product was succesfully published."
+      redirect_to product_path(@product), notice: "Product was succesfully published."
     else
       render :new
     end
@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to @product, notice: "Product was succesfully updated."
+      redirect_to product_path(@product), notice: "Product was succesfully updated."
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :price, :color, :fabric, :delivery)
+    params.require(:product).permit(:title, :description, :price, :color, :fabric, :delivery, :size, :photo)
   end
 
   def set_product
