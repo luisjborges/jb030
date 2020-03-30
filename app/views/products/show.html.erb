@@ -8,6 +8,7 @@
 <% @product.reviews.each do |review| %>
   <p><%= review.content %></p>
   <p><%= review.rating %></p>
+  <%= link_to 'Delete', review_path(review), method: :delete %>
 <% end %>
 
 <%= image_tag @product.photo, alt: @product.title, :class => "card-product" %>

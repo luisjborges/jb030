@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_product
+  before_action :find_product, except: [:destroy]
 
   def new
     @review = Review.new
@@ -13,6 +13,12 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to product_path(@review.product)
   end
 
   private
