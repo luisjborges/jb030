@@ -12,6 +12,8 @@
      <%= favicon_link_tag asset_path('logo.png') %>
   </head>
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_pack_tag 'application' %>
