@@ -2,6 +2,8 @@
 <p><%= @product.description %></p>
 <% if @product.photo.attached? %>
   <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+  <h1>No image to show</h1>
 <% end %>
 
 <%= link_to 'Back', products_path %>
