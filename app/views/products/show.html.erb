@@ -7,8 +7,15 @@
 <% end %>
 
 <%= link_to 'Back', products_path %>
-<%= link_to 'Edit', edit_product_path(@product) %>
-<%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<% if policy(@product).edit? %>
+  <%= link_to 'Edit', edit_product_path(@product) %>
+<% end %>
+
+<% if policy(@product).destroy? %>
+  <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
 <%= link_to 'Add a new review', new_product_review_path(@product) %>
 
 <% @product.reviews.each do |review| %>

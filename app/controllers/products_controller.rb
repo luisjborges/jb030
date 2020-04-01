@@ -4,16 +4,20 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @products = policy_scope(Product).order(created_at: :desc)
   end
 
   def show; end
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
+    authorize @product
 
     if @product.save
       redirect_to product_path(@product), notice: "Product was succesfully published."
@@ -49,6 +53,7 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+    authorize @product
   end
 
 end
