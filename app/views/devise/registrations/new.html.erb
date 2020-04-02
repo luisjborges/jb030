@@ -12,11 +12,11 @@
 
       <div class="form-inputs">
       <%= f.input :first_name, placeholder: "Bob",
-                  required: false,
+                  required: true,
                   autofocus: true,
                   input_html: { autocomplete: "first_name" } %>
       <%= f.input :last_name,
-                  required: false, placeholder: "Sponge",
+                  required: true, placeholder: "Sponge",
                   autofocus: true,
                   input_html: { autocomplete: "last_name" } %>
       <%= f.input :email,
