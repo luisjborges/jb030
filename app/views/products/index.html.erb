@@ -12,13 +12,15 @@
   <div class="box">
       <div class="card-trip">
         <% @products.each do |product| %>
-        <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
-          <div class="card-trip-infos">
-            <div>s
-              <h2> <%= link_to product.title, product_path(product) %></h2>
-              <p> <%= product.description %></p>
-            </div>
-            <h2 class="card-trip-pricing"><%= product.price %>€</h2>
+          <%= link_to product_path(product) do %>
+            <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2> <%= product.title %></h2>
+                <p> <%= product.description %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= product.price %>€</h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
           </div>
         <% end %>
