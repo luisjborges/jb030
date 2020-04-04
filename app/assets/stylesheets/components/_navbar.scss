@@ -8,6 +8,9 @@
 
 .navbar-jb-white {
   background-color: white;
+  #navbar-font {
+    color: black;
+  }
 }
 
 .navbar-jb .navbar-collapse {
@@ -27,4 +30,8 @@
   font-size: 40px;
   margin: 20px;
   width: 100%;
+}
+
+#navbar-font {
+  color:white;
 }
