@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.save
-      redirect_to product_path(@product), notice: "Product was succesfully published."
+      redirect_to products_path, notice: "Product was succesfully published."
     else
       render :new
     end
