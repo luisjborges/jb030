@@ -18,6 +18,6 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 @font-face {
 font-family: 'Sporting Grotesque';
-src: url('SportingGrotesque-Bold.otf') format('truetype');
-src: url('SportingGrotesque-Regular.otf') format('truetype');
+src: font-url('SportingGrotesque-Bold.otf') format('truetype');
+src: font-url('SportingGrotesque-Regular.otf') format('truetype');
 }

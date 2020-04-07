@@ -22,5 +22,6 @@ module Jb030
     # the framework and any gems in your application.
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    # config.assets.precompile << /\.(?:svg|png|jpg|eot|woff|ttf)$/
   end
 end
