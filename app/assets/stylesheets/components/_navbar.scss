@@ -4,10 +4,15 @@
   background-color: transparent;
   transition: 0.5s background-color ease;
   font-size: 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
 .navbar-jb-white {
   background-color: white;
+  // background-image: url('logo.png');
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  border-style: none;
   #navbar-font {
     color: black;
   }
@@ -30,8 +35,10 @@
   font-size: 40px;
   margin: 20px;
   width: 100%;
+  font-family: "Sporting Grotesque";
 }
 
 #navbar-font {
-  color:white;
+  color: white;
+  font-family: "Sporting Grotesque";
 }

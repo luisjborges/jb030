@@ -14,3 +14,10 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+
+@font-face {
+font-family: 'Sporting Grotesque';
+src: url('SportingGrotesque-Bold.otf') format('truetype');
+src: url('SportingGrotesque-Regular.otf') format('truetype');
+}
