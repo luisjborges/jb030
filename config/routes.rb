@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'subscribers/index'
   devise_for :users
 
   root to: 'pages#home'
   get "about", to: "pages#about"
   get "faq", to: "pages#faq"
+
+  resources :subscribers
 
   resources :products do
     collection do
