@@ -11,7 +11,7 @@
   max-width: 100%;
   display: block;
   h1 {
-    font-size: 100px;
+    font-size: 80px;
     font-family: "Sporting Grotesque";
   }
   p {
@@ -22,4 +22,26 @@
 
 #banner-typed-text {
   color: black;
+}
+
+.container-home {
+  background-color: black;
+  p {
+    color: white;
+    font-family: "Happy Times";
+    font-style: italic;
+  }
+  h2 {
+    color: white;
+    font-family: "Sporting Grotesque";
+  }
+}
+
+.new-line {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid white;
+  margin: 1em 0;
+  padding: 0;
 }
