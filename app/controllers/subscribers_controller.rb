@@ -1,13 +1,20 @@
 class SubscribersController < ApplicationController
 
   def index
+    @subscribers = Subscriber.all
+    @subscribers = policy_scope(Subscriber)
+  end
+
+  def new
     @subscriber = Subscriber.new
+    authorize @subscriber
   end
 
   def create
-    @subcriber = Subscriber.new(subscriber_params)
-    if @subscriber.saved_subscriber
-      cookies[:saved_lead] = true
+    @subscriber = Subscriber.new(subscriber_params)
+    authorize @subscriber
+    if @subscriber.save
+      cookies[:saved_subscriber] = true
       redirect_to root_path, notice: "Saved succesfully"
     else
       redirect_to rooth_path, notice: "Failed to saved_lead"
