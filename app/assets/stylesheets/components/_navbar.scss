@@ -8,13 +8,14 @@
 }
 
 .navbar-jb-white {
-  background-color: white;
+  background-color: transparent;
   // background-image: url('logo.png');
   background-repeat: no-repeat;
   vertical-align: middle;
   border-style: none;
   #navbar-font {
-    color: black;
+    color: transparent;
+    transition: 0.5s color ease;
   }
 }
 

@@ -8,7 +8,7 @@
         <p>
         <span id="banner-typed-text"></span>
         </p>
-        <a href="#newsletter-section" class="btn btn-primary">Get notified!</a>
+        <a href="#newsletter-section" class="btn btn-flat">Notify me!</a>
       </div>
     </div>
   </div>
@@ -51,11 +51,36 @@
         <%= '(or a few) gets a CODE to have access to the Jungbusch Stream where we share videos with you and teach you the “HOW TO COCKTAIL ABC” and tell you everything about your drink as we can’t do it face to face. Last but not least: we miss you!' %>
       </p>
       </br>
-
-      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 100 %>
+      <hr class ="new-line">
+      <p>
+        <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 50 %>
+      </p>
+      </br>
+      <hr class ="new-line">
+      <p>
+        <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 50 %>
+      </p>
+      </br>
+      <hr class ="new-line">
+      <p>
+        <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 50 %>
+      </p>
+      </br>
+      <hr class ="new-line">
 
     </div>
   </div>
 </div>
+
+<div class="container-newsletter" id="newsletter-section">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-8">
+      <h1>Help us keep</h1>
+      <h1>the pink light on!</h1>
+      <%= render "subscribers/subscribeform" %>
+    </div>
+  </div>
+</div>
+
 
 <%= render 'shared/footer' %>

@@ -16,8 +16,8 @@
     color: black;
   }
   p {
-   font-size: 40px;
-    font-family: "Helvetica";
+   font-size: 30px;
+    font-family: "Happy Times";
   }
 }
 
@@ -45,4 +45,22 @@
   border-top: 2px solid white;
   margin: 1em 0;
   padding: 0;
+}
+
+#newsletter-section {
+  background-color: black;
+  p {
+    color: white;
+    font-family: "Happy Times";
+    font-style: italic;
+  }
+  h1 {
+    font-size: 60px;
+    color: #ff69b4;
+    font-family: "Sporting Grotesque";
+  }
+}
+
+.container-newsletter {
+  margin: 100px;
 }

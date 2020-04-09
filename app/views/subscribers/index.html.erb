@@ -1,1 +1,5 @@
-  <%= render 'subscribeform.html.erb' %>
+<% if cookies[:saved_subscriber] %>
+  <p>Thanks for signing up!</p>
+<% else %>
+  <%= render "subscribeform" %>
+<% end %>

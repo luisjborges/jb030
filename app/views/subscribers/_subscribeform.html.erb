@@ -1,6 +1,8 @@
-<h1>Sign up to get notified here!</h1>
-  <%= simple_form_for @subscriber do |f| %>
-    <%= f.input :name, placeholder: "Name" %>
-    <%= f.input :email, placeholder: "Email", input_html: { class: 'submit-field'}, label: false, wrapper: false %>
-    <%= f.button :submit, "Notify me!", class: 'btn btn-primary' %>
+<h3>Sign up to get notified here!</h3>
+<div class="container">
+  <%= simple_form_for Subscriber.new do |f| %>
+    <%= f.input :name, label: 'Your name:', placeholder: "Name" %>
+    <%= f.input :email, placeholder: "Email", label: 'Your email:', wrapper: false %>
+    <%= f.button :submit, "Let's do it!", class: 'btn-newsletter' %>
 <% end %>
+</div>
