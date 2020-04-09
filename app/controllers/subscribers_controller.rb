@@ -1,24 +1,21 @@
 class SubscribersController < ApplicationController
-skip_before_action :authenticate_user!, only: [:new, :create]
+skip_before_action :authenticate_user!, only: [:create, :index]
 
   def index
-    @subscribers = Subscriber.all
-    @subscribers = policy_scope(Subscriber)
-  end
-
-  def new
     @subscriber = Subscriber.new
     authorize @subscriber
+    @subscribers = policy_scope(Subscriber)
   end
 
   def create
     @subscriber = Subscriber.new(subscriber_params)
     authorize @subscriber
+    # @subscriber.save!
     if @subscriber.save
       cookies[:saved_subscriber] = true
-      redirect_to root_path, notice: "Saved succesfully"
+      redirect_to subscribers_path, notice: "Saved succesfully"
     else
-      redirect_to rooth_path, notice: "Failed to saved_lead"
+      render :index
     end
   end
 

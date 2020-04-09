@@ -3,6 +3,7 @@ class SubscriberPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
     def index?
       true
@@ -11,5 +12,4 @@ class SubscriberPolicy < ApplicationPolicy
     def create?
       true
     end
-  end
-end
+ end

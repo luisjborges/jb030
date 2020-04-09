@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
   get "faq", to: "pages#faq"
 
-  resources :subscribers, only: [:new, :create]
+  resources :subscribers, only: [:new, :create, :index]
 
   resources :products do
     collection do
