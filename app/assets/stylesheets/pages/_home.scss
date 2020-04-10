@@ -19,11 +19,8 @@
 .container-home {
   max-width: 100%;
   background-color: black;
-}
-
-.slide {
-  width: 100vw;
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .wrapper {
@@ -86,7 +83,13 @@
     font-family: "Sporting Grotesque";
     text-align: center;
   }
-  }
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: scroll;
+}
 
 .one {
   background-image: url("jbcouple.jpg");
@@ -96,7 +99,11 @@
   background-position: center;
   height: 100vh;
   padding-top: 40px;
-  max-width: 100%;
+  max-width: 60vw;
+  flex: none;
+  max-width: 40vw;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .two {
@@ -107,7 +114,10 @@
   background-position: center;
   height: 100vh;
   padding-top: 40vh;
-  max-width: 100%;
+  flex: none;
+  max-width: 40vw;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .three {
@@ -118,11 +128,66 @@
   background-position: center;
   height: 100vh;
   padding-top: 40vh;
-  width: 150vw;
+  max-width: 70vw;
+  flex: none;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.container-newsletter {
-  margin: 100px;
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .one {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .two {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .three {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .slide-content {
+    max-width: 100%;
+    flex: none;
+    }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .wrapper h1 {
+    padding-top: 20px;
+    font-size: 32px;
+    max-width: 100vw;
+   }
+  .wrapper h2 {
+    padding-top: 120px;
+    font-size: 32px;
+    max-width: 100vw;
+   }
+  .wrapper h3 {
+    font-size: 100px;
+    max-width: 100vw;
+    max-height: 100vw;
+   }
+  .wrapper p {
+    font-size: 12px;
+    max-width: 100vw;
+    padding-top: 2px;
+   }
 }
 
 #newsletter-section {
