@@ -7,6 +7,18 @@
   // box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
+.navbar-jb-subscribe {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+  font-size: 10px;
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  // box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
 .navbar-jb-white {
   background-color: transparent;
   // background-image: url('logo.png');
