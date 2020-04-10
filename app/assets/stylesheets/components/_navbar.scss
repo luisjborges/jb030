@@ -17,6 +17,20 @@
     color: transparent;
     transition: 0.5s color ease;
   }
+  #soon-font {
+  font-size: 10px;
+  padding: 10px;
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 30px;
+  transform: rotate(-20deg);
+  color: transparent;
+  transition: 0.5s color ease;
+}
+ .badge-light {
+  background-color: transparent;
+  transition: 0.5s color ease;
+ }
 }
 
 .navbar-jb .navbar-collapse {
@@ -43,3 +57,31 @@
   color: white;
   font-family: "Sporting Grotesque";
 }
+
+#soon-font {
+  font-size: 10px;
+  padding: 10px;
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 30px;
+  transform: rotate(-20deg);
+}
+// .navbar-item .notification {
+//   color: white;
+//   text-decoration: none;
+//   padding: 15px 26px;
+//   position: relative;
+//   display: inline-block;
+//   border-radius: 2px;
+// }
+
+// .navbar-item .badge {
+//   position: absolute;
+//   top: -10px;
+//   right: -10px;
+//   padding: 5px 10px;
+//   border-radius: 50%;
+//   background-color: white;
+//   color: black;
+//   font-size: 10px;
+// }

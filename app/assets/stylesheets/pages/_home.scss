@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .home-banner {
-  background-image: url("jbflower.jpg");
+  background-image: url("jbmodel1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -10,15 +10,6 @@
   padding-top: 40vh;
   max-width: 100%;
   display: block;
-  h1 {
-    font-size: 60px;
-    font-family: "Sporting Grotesque";
-    color: black;
-  }
-  p {
-   font-size: 30px;
-    font-family: "Happy Times";
-  }
 }
 
 #banner-typed-text {
@@ -28,6 +19,89 @@
 .container-home {
   max-width: 100%;
   background-color: black;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 300vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+  p {
+    font-size: 20px;
+    padding: 40px;
+    margin-top: 100px;
+    color: white;
+    font-family: "Happy Times";
+    font-style: italic;
+  }
+  h2 {
+    font-size: 80px;
+    padding: 40px;
+    margin-top: 100px;
+    color: white;
+    font-family: "Sporting Grotesque";
+  }
+}
+
+.outer-wrapper {
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.one {
+  background-image: url("jbcouple.jpg");
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-top: 40px;
+  max-width: 100%;
+}
+
+.two {
+  background-image: url("jbmodel2.jpg");
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-top: 40vh;
+  max-width: 100%;
+  .slide-content {
+    display: flex;
+  }
+}
+
+.three {
+  background-image: url("jbflower.jpg");
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-top: 40vh;
+  width: 300vw;
+  .slide-content {
+    display: flex;
+  }
 }
 
 #newsletter-section {
@@ -44,98 +118,13 @@
   }
 }
 
-.container-newsletter {
-  margin: 100px;
-}
-
-.slide {
-  width: 100vw;
-  height: 100vh;
-}
-
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  width: 400vw;
-  transform: rotate(90deg) translateY(-100vh);
-  transform-origin: top left;
-  p {
-    margin-top: 200px;
-    color: white;
-    font-family: "Happy Times";
-    font-style: italic;
-  }
-  h2 {
-    margin-top: 200px;
-    color: white;
-    font-family: "Sporting Grotesque";
-  }
-}
-
-.one {
-  border: 80px;
-  background-image: url("jbmodel2.jpg");
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  padding-top: 40vh;
-  max-width: 100%;
-  h2 {
-    display: flex;
-    text-align: left;
-  }
-  p {
-    display: flex;
-  }
-}
-
-.two {
-  background-image: url("jbmodel3.jpg");
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  padding-top: 40vh;
-  max-width: 100%;
-}
-
-.three {
-  background-image: url("jbcouple.jpg");
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  padding-top: 40vh;
-  max-width: 100%;
-}
-
-.four {
-  background-image: url("jbmodel1.jpg");
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  padding-top: 40vh;
-  max-width: 100%;
-}
-
-.outer-wrapper {
-  width: 100vh;
-  height: 100 vw;
-  transform: rotate(-90deg) translateX(-100vh);
-  transform-origin: top left;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  position: absolute;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
+// .four {
+//   background-image: url("jbmodel1.jpg");
+//   object-fit: cover;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+//   height: 100vh;
+//   padding-top: 40vh;
+//   max-width: 100%;
+// }
