@@ -35,7 +35,6 @@
   p {
     font-size: 20px;
     padding: 40px;
-    margin-top: 100px;
     color: white;
     font-family: "Happy Times";
     font-style: italic;
@@ -65,6 +64,10 @@
   display: none;
 }
 
+.slide-content {
+    width: 100vw;
+  }
+
 .one {
   background-image: url("jbcouple.jpg");
   object-fit: cover;
@@ -85,9 +88,6 @@
   height: 100vh;
   padding-top: 40vh;
   max-width: 100%;
-  .slide-content {
-    display: flex;
-  }
 }
 
 .three {
@@ -98,10 +98,7 @@
   background-position: center;
   height: 100vh;
   padding-top: 40vh;
-  width: 300vw;
-  .slide-content {
-    display: flex;
-  }
+  width: 150vw;
 }
 
 #newsletter-section {
