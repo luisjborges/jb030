@@ -78,6 +78,7 @@
 }
 
 .slide-content {
+    width: 100vw;
   h1 {
     font-size: 60px;
     color: #ff69b4;
@@ -85,19 +86,6 @@
     font-family: "Sporting Grotesque";
     text-align: center;
   }
-
-  @media(max-width: 992px) {
-  .slide-content {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media(max-width: 768px) {
-  .slide-content {
-    grid-template-columns: 1fr;
-  }
-}
-
   }
 
 .one {
