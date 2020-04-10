@@ -1,8 +1,12 @@
-<h3>Sign up to get notified here!</h3>
 <div class="container">
-  <%= simple_form_for Subscriber.new do |f| %>
-    <%= f.input :name, label: 'Your name:', placeholder: "Name" %>
-    <%= f.input :email, placeholder: "Email", label: 'Your email:', wrapper: false %>
-    <%= f.button :submit, "Let's do it!", class: 'btn-newsletter' %>
-<% end %>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-8" id="content">
+      <h4>Sign up to get notified here!<h4>
+        <%= simple_form_for Subscriber.new do |f| %>
+          <%= f.input :name, label: false, placeholder: "Name" %>
+          <%= f.input :email, placeholder: "Email", label: false, wrapper: false %>
+          <%= f.button :submit, "Let's keep the light on!", class: 'btn-newsletter' %>
+      <% end %>
+    </div>
+  </div>
 </div>

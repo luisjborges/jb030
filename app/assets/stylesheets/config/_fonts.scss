@@ -28,3 +28,9 @@ src: font-url('happy-times-NG_bold_master.otf') format('truetype');
 src: font-url('happy-times-NG_italic_master.otf') format('truetype');
 src: font-url('happy-times-NG_regular_master.otf') format('truetype');
 }
+
+@font-face {
+font-family: 'Working Sans';
+src: font-url('WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
+src: font-url('WorkSans-VariableFont_wght.ttf') format('truetype');
+}

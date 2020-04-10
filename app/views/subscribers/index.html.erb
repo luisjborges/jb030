@@ -1,5 +1,15 @@
-<% if cookies[:saved_subscriber] %>
-  <p>Thanks for signing up!</p>
-<% else %>
-  <%= render "subscribeform" %>
-<% end %>
+<div class="subscriber-banner">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-8" id="content">
+        <% if cookies[:saved_subscriber] %>
+          <p>Thanks for signing up! </p>
+          <p>Spread the love for the pink light even further:</p>
+          <a href="whatsapp://send?text= Help save our local Bars in Berlin and sign up to support Jungbusch in Neukölln => www.jungbusch030.com" data-action="share/whatsapp/share" class="btn btn-newsletter">Spread the word!</a>
+            <% else %>
+            <%= render "subscribeform" %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

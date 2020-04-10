@@ -21,5 +21,11 @@
   background: #ff69b4;
   transition: background 0.3s ease;
   font-family: 'Sporting Grotesque';
+  margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.btn-newsletter:hover {
+  background: #660033;
+  color: white;
 }
