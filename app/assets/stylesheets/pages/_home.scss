@@ -10,10 +10,22 @@
   padding-top: 40vh;
   max-width: 100%;
   display: block;
+  p {
+    padding-top: 10px;
+  }
+  h1 {
+  font-size: 30px;
+  color: #ff69b4;
+  padding: 8px;
+  font-family: "Sporting Grotesque";
+  text-align: center;
+  }
 }
 
 #banner-typed-text {
   color: black;
+  font-size: 30px;
+  font-family: "Happy Times";
 }
 
 .container-home {

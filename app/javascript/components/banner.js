@@ -1,11 +1,11 @@
-// import Typed from 'typed.js';
+import Typed from 'typed.js';
 
-// const loadDynamicBannerText = () => {
-//   new Typed('#banner-typed-text', {
-//     strings: ["Save your local bar", "Support now!"],
-//     typeSpeed: 50,
-//     loop: true
-//   });
-// }
+const loadDynamicBannerText = () => {
+  new Typed('#banner-typed-text', {
+    strings: ["Save your local bar", "Scroll down to read our story."],
+    typeSpeed: 50,
+    loop: true
+  });
+}
 
-// export { loadDynamicBannerText };
+export { loadDynamicBannerText };
