@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "about", to: "pages#about"
   get "faq", to: "pages#faq"
+  get "imprint", to: "pages#imprint"
 
   resources :subscribers, only: [:new, :create, :index]
 
