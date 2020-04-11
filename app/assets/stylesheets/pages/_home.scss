@@ -190,6 +190,63 @@
    }
 }
 
+@media (max-width: 300px) {
+  /* For a screen < 300px, this CSS will be read */
+  .one {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 325px) {
+  /* For a screen < 325px, this CSS will be read */
+  .two {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 325px) {
+  /* For a screen < 325px, this CSS will be read */
+  .three {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 325px) {
+  /* For a screen < 325px, this CSS will be read */
+  .slide-content {
+    max-width: 100%;
+    flex: none;
+    }
+}
+
+@media (max-width: 325px) {
+  /* For a screen < 300px, this CSS will be read */
+  .wrapper h1 {
+    padding-top: 20px;
+    font-size: 22px;
+    max-width: 100vw;
+   }
+  .wrapper h2 {
+    padding-top: 80px;
+    font-size: 22px;
+    max-width: 100vw;
+   }
+  .wrapper h3 {
+    font-size: 40px;
+    max-width: 100vw;
+    max-height: 100vw;
+   }
+  .wrapper p {
+    font-size: 10px;
+    max-width: 100vw;
+    padding-top: 2px;
+   }
+}
+
+
 #newsletter-section {
   background-color: black;
   p {
