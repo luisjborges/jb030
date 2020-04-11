@@ -7,18 +7,19 @@
   color: #eee;
   text-align: center;
   padding-top: 40vh;
-  max-width: 100%;
+  max-width: 100vw;
   display: block;
 }
 
 #content {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 16px;
+  width: 400px;
   p {
-    font-size: 50px;
+    font-size: 30px;
     color: #ff69b4;
     font-family: "Happy Times";
     text-align: center;
+    padding-top: 20px;
   }
 }
-
