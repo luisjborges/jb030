@@ -148,6 +148,63 @@
   padding-right: 15px;
 }
 
+@media (max-width: 1300px) {
+  /* For a screen < 1300px, this CSS will be read */
+  .one {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 1300px) {
+  /* For a screen < 1300px, this CSS will be read */
+  .two {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 1300px) {
+  /* For a screen < 1300px, this CSS will be read */
+  .three {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 1300px) {
+  /* For a screen < 1300px, this CSS will be read */
+  .slide-content {
+    max-width: 100%;
+    flex: none;
+    }
+}
+
+@media (max-width: 1300px) {
+  /* For a screen < 540px, this CSS will be read */
+  .wrapper h1 {
+    padding-top: 20px;
+    font-size: 34px;
+    max-width: 100vw;
+   }
+  .wrapper h2 {
+    padding-top: 120px;
+    font-size: 40px;
+    max-width: 100vw;
+   }
+  .wrapper h3 {
+    font-size: 120px;
+    max-width: 100vw;
+    max-height: 100vw;
+   }
+  .wrapper p {
+    font-size: 18px;
+    max-width: 100vw;
+    padding-top: 2px;
+   }
+}
+
+
 @media (max-width: 540px) {
   /* For a screen < 540px, this CSS will be read */
   .one {
@@ -204,7 +261,55 @@
    }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
+  /* For a screen < 400px, this CSS will be read */
+  .two {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 400px, this CSS will be read */
+  .three {
+    max-width: 100%;
+    flex: none;
+   }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 400px, this CSS will be read */
+  .slide-content {
+    max-width: 100%;
+    flex: none;
+    }
+}
+
+@media (max-width: 400px) {
+  /* For a screen < 540px, this CSS will be read */
+  .wrapper h1 {
+    padding-top: 20px;
+    font-size: 28px;
+    max-width: 100vw;
+   }
+  .wrapper h2 {
+    padding-top: 100px;
+    font-size: 26px;
+    max-width: 100vw;
+   }
+  .wrapper h3 {
+    font-size: 70px;
+    max-width: 100vw;
+    max-height: 100vw;
+   }
+  .wrapper p {
+    font-size: 12px;
+    max-width: 100vw;
+    padding-top: 2px;
+   }
+}
+
+@media (max-width: 325px) {
   /* For a screen < 300px, this CSS will be read */
   .one {
     max-width: 100%;
