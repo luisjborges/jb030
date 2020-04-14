@@ -8,8 +8,8 @@ class OrdersController < ApplicationController
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
-      name: @product.sku,
-      images: [@product.photo],
+      name: @product.name,
+      images: [@product.photo.key],
       amount: @product.price_cents,
       currency: 'eur',
       quantity: 1
@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
+    authorize @order
   end
 
 end
