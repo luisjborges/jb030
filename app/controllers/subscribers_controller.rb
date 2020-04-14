@@ -9,13 +9,13 @@ skip_before_action :authenticate_user!, only: [:create, :index]
 
   def create
     @subscriber = Subscriber.new(subscriber_params)
-    @subscriber.save!
+    # @subscriber.save!
     authorize @subscriber
     if @subscriber.save
       cookies[:saved_subscriber] = true
       redirect_to subscribers_path, notice: "Saved succesfully"
     else
-      redirect_to subscribers_path, notice: "Name and emails are required"
+      redirect_to subscribers_path, notice: "Name and email are required"
     end
   end
 
