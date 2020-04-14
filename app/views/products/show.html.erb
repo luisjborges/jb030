@@ -1,4 +1,6 @@
-<h1><%= @product.title %> <%= @product.price %> EUR</h1>
+<div class="show-container">
+
+<h1><%= @product.title %> <%= humanized_money_with_symbol(@product.price) %></h1>
 <p><%= @product.description %></p>
 <% if @product.photo.attached? %>
   <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
@@ -23,5 +25,7 @@
   <p><%= review.rating %></p>
   <%= link_to 'Delete', review_path(reviews), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
+
+</div>
 
 <%= render 'shared/footerpages' %>
