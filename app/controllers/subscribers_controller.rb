@@ -10,12 +10,12 @@ skip_before_action :authenticate_user!, only: [:create, :index]
   def create
     @subscriber = Subscriber.new(subscriber_params)
     authorize @subscriber
-    @subscriber.save!
+    # @subscriber.save!
     if @subscriber.save
       cookies[:saved_subscriber] = true
-      redirect_to subscribers_path, notice: "Thanks for supporting"
+      redirect_to subscribers_path, notice: "Saved succesfully"
     else
-       redirect_to root_path, "#sign-up", notice: "These fields cant be empty"
+      render :index
     end
   end
 
