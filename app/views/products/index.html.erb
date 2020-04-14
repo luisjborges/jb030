@@ -19,7 +19,7 @@
                 <h2> <%= product.name %></h2>
                 <p> <%= product.description %></p>
               </div>
-              <h2 class="card-trip-pricing"><h2><%= humanized_money_with_symbol(product.price_cents) %></h2>
+              <h2 class="card-trip-pricing"><h2><%= humanized_money_with_symbol(product.price) %></h2>
               <%= cl_image_tag product.user.photo.key, class: "card-trip-user avatar-bordered" %>
             </div>
         </div>

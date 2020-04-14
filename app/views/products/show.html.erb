@@ -1,6 +1,6 @@
 <div class="show-container">
 
-<h1><%= @product.name %> <%= humanized_money_with_symbol(@product.price_cents) %></h1>
+<h1><%= @product.name %> <%= humanized_money_with_symbol(@product.price) %></h1>
 <p><%= @product.description %></p>
 
 <%= form_tag orders_path do %>
