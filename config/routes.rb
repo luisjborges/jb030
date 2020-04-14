@@ -17,4 +17,9 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [ :destroy ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+
 end

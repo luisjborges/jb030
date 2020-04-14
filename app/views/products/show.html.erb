@@ -2,6 +2,14 @@
 
 <h1><%= @product.title %> <%= humanized_money_with_symbol(@product.price) %></h1>
 <p><%= @product.description %></p>
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'product_id', @product.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+
+</br>
+
 <% if @product.photo.attached? %>
   <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
 <% else %>
