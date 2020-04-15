@@ -10,7 +10,7 @@ initUpdateNavbarOnScroll();
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
-import { GoogleAnalytics } from '../packs/google_analytics';
+import { GoogleAnalytics } from '../packs/google_analytics.js.erb';
 GoogleAnalytics();
 
 document.addEventListener('turbolinks:load', () => {
