@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :products
   has_many :vouchers
-  has_one_attached :photo
   has_many :orders
+  has_one_attached :photo
 end
