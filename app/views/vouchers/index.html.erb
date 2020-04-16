@@ -1,0 +1,31 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-jb">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+    <% end %>
+</div>
+
+<h1>All Vouchers</h1>
+
+<%= link_to 'Publish a new voucher', new_voucher_path %>
+
+<div class="index-container">
+  <div class="product-cards">
+    <% @vouchers.each do |voucher| %>
+      <%= link_to voucher_path(voucher) do %>
+        <div class="card-trip">
+          <%= cl_image_tag voucher.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                <h2> <%= voucher.name %></h2>
+                <p> <%= voucher.description %></p>
+              </div>
+              <h2 class="card-trip-pricing"><h2><%= humanized_money_with_symbol(voucher.price) %></h2>
+              <%= cl_image_tag voucher.user.photo.key, class: "card-trip-user avatar-bordered" %>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

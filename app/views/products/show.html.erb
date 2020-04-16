@@ -26,14 +26,6 @@
   <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
-<%= link_to 'Add a new review', new_product_review_path(@product) %>
-
-<% @product.reviews.each do |review| %>
-  <p><%= review.content %></p>
-  <p><%= review.rating %></p>
-  <%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
-
 </div>
 
 <%= render 'shared/footerpages' %>

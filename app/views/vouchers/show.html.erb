@@ -1,0 +1,30 @@
+<div class="show-container">
+  <h1><%= @voucher.name %> <%= humanized_money_with_symbol(@voucher.price) %></h1>
+  <p><%= @voucher.description %></p>
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'voucher_id', @voucher.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+
+</br>
+
+<% if @voucher.photo.attached? %>
+  <%= cl_image_tag @voucher.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+  <h1>No image to show</h1>
+<% end %>
+
+<%= link_to 'Back', vouchers_path %>
+
+<% if policy(@voucher).edit? %>
+  <%= link_to 'Edit', edit_voucher_path(@voucher) %>
+<% end %>
+
+<% if policy(@voucher).destroy? %>
+  <%= link_to 'Delete', voucher_path(@voucher), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+</div>
+
+<%= render 'shared/footerpages' %>

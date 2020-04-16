@@ -8,16 +8,16 @@ Rails.application.routes.draw do
 
   resources :subscribers, only: [:new, :create, :index]
 
-  resources :vouchers, only: [:new, :create, :index, :show]
+  resources :vouchers
 
-  resources :products do
-    collection do
-      get :top
-    end
-  resources :reviews, only: [:new, :create]
-  end
+  resources :products # do
+  #   collection do
+  #     get :top
+  #   end
+  # resources :reviews, only: [:new, :create]
+  # end
 
-  resources :reviews, only: [ :destroy ]
+  # resources :reviews, only: [ :destroy ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :orders, only: [:show, :create] do
