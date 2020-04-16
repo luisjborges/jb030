@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :subscribers, only: [:new, :create, :index]
 
+  resources :vouchers, only: [:new, :create, :index, :show]
+
   resources :products do
     collection do
       get :top
