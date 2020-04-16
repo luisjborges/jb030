@@ -31,7 +31,7 @@
 <% @product.reviews.each do |review| %>
   <p><%= review.content %></p>
   <p><%= review.rating %></p>
-  <%= link_to 'Delete', review_path(reviews), method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to 'Delete', review_path(review), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 
 </div>
