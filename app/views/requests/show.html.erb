@@ -2,7 +2,7 @@
   <div class="row py-4">
     <div class="col-md-3"><%= image_tag @request.voucher.photo, width: '100%' %></div>
     <div class="col">
-      <h1>Request #<%= @request.id %> <small><span class="badge badge-primary"><%= @request.state %></span></small></h1>
+      <h1>Request #<%= @request.id %> <small><span class="badge badge-primary"><%= 'paid' %></span></small></h1> <%= #request.state %>
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @request.created_at.to_date %></li>
         <li><strong>VOUCHER</strong> <%= @request.voucher.name %> [<%= @request.voucher_sku %>]</li>
