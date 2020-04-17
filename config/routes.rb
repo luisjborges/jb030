@@ -24,9 +24,13 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
-  resources :ordervouchers, only: [:show, :create] do
-    resources :voucherpayments, only: :new
+  resources :requests, only: [:show, :create] do
+    resources :settlements, only: :new
   end
+
+  # resources :ordervouchers, only: [:show, :create] do
+  #   resources :voucherpayments, only: :new
+  # end
 
   # post '/ordervouchers(.:format)', to: 'ordervouchers#create', as: :ordervouchers do
   #   resources :voucherpayments, only: :new

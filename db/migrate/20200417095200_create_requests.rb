@@ -1,6 +1,6 @@
-class CreateOrderVouchers < ActiveRecord::Migration[6.0]
+class CreateRequests < ActiveRecord::Migration[6.0]
   def change
-    create_table :order_vouchers do |t|
+    create_table :requests do |t|
       t.string :state
       t.string :voucher_sku
       t.monetize :amount, currency: { present: false }

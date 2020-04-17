@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OrderVoucherTest < ActiveSupport::TestCase
+class RequestsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
