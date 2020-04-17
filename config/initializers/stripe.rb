@@ -21,6 +21,8 @@ StripeEvent.configure do |events|
   events.subscribe 'checkout.session.completed', StripeCheckoutSessionService.new
 end
 
+@request = Request.find_by(checkout_session_id: event.data.object.id)
+
 # StripeEvent.configure do |events|
 #   events.subscribe 'checkout.session.completed', StripeRequestService.new
 # end
