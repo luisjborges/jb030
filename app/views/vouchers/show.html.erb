@@ -2,7 +2,7 @@
   <h1><%= @voucher.name %> <%= humanized_money_with_symbol(@voucher.price) %></h1>
   <p><%= @voucher.description %></p>
 
-<%= form_tag orders_path do %>
+<%= form_tag ordervouchers_path do %>
   <%= hidden_field_tag 'voucher_id', @voucher.id %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
 <% end %>

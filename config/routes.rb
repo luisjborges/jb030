@@ -24,6 +24,22 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
+  resources :ordervouchers, only: [:show, :create] do
+    resources :voucherpayments, only: :new
+  end
+
+  # post '/ordervouchers(.:format)', to: 'ordervouchers#create', as: :ordervouchers do
+  #   resources :voucherpayments, only: :new
+  # end
+
+#   resources :orders, only: [:redeem] do
+#   collection do
+#     post :redeem, :as => :create_voucher do
+#      resources :payments, only: :new
+#     end
+#   end
+# end
+
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
 end

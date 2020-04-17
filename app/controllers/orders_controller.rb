@@ -1,12 +1,8 @@
 class OrdersController < ApplicationController
 
   def create
-    @product = Product.find(params[:product_id]) if params[:product_id].present?
-    @order = Order.create!(product: @product, product_sku: @product.sku, amount_cents: @product.price_cents, state: 'pending', user: current_user)
-
-    @product = Voucher.find(params[:voucher_id]) if params[:product_id].present?
+    @product = Product.find(params[:product_id])
     @order  = Order.create!(product: @product, product_sku: @product.sku, amount_cents: @product.price_cents, state: 'pending', user: current_user)
-
     authorize @order
 
     session = Stripe::Checkout::Session.create(
@@ -27,8 +23,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = current_user.orders.find(params[:id])
-    authorize @order
+  @order = current_user.orders.find(params[:id])
   end
 
 end

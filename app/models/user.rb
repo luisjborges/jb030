@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :products
   has_many :vouchers
   has_many :orders
+  has_many :order_vouchers
   has_one_attached :photo
 end

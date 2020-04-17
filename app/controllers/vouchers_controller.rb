@@ -44,7 +44,7 @@ class VouchersController < ApplicationController
   private
 
   def voucher_params
-    params.require(:voucher).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :photo)
+    params.require(:voucher).permit(:sku, :name, :description, :price_cents)
   end
 
   def set_voucher
