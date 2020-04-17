@@ -1,4 +1,6 @@
+
 <div class="show-container">
+  <div class="cointainer">
   <h1><%= @voucher.name %> <%= humanized_money_with_symbol(@voucher.price) %></h1>
   <p><%= @voucher.description %></p>
 
@@ -25,6 +27,7 @@
   <%= link_to 'Delete', voucher_path(@voucher), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 
+</div>
 </div>
 
 <%= render 'shared/footerpages' %>
