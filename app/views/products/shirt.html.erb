@@ -1,3 +1,9 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-jb">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+    <% end %>
+</div>
+
 <h1>JB030 Shirts</h1>
 
 <div class="index-container">
@@ -12,7 +18,7 @@
                 <p> <%= product.description %></p>
               </div>
               <h2 class="card-trip-pricing"><h2><%= humanized_money_with_symbol(product.price) %></h2>
-              <%= cl_image_tag product.user.photo.key, class: "card-trip-user avatar-bordered" %>
+              <%#= cl_image_tag product.user.photo.key, class: "card-trip-user avatar-bordered" %>
             </div>
         </div>
       <% end %>
