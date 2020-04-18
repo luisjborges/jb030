@@ -15,11 +15,11 @@
         </li>
         <li class="nav-item">
 <!--           <span class="badge badge-pill badge-light" id="soon-font">Soon!</span> -->
-          <%= link_to "MARKET", products_path, class: "nav-link", id:"navbar-font" %>
+          <%= link_to "MARKET", shirt_products_path, class: "nav-link", id:"navbar-font" %>
         </li>
         <li class="nav-item">
 <!--           <span class="badge badge-pill badge-light" id="soon-font">Soon!</span> -->
-          <%= link_to "VOUCHERS", products_path , class: "nav-link", id:"navbar-font" %>
+          <%= link_to "VOUCHERS", voucher_products_path , class: "nav-link", id:"navbar-font" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
