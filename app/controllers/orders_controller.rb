@@ -27,3 +27,29 @@ class OrdersController < ApplicationController
   end
 
 end
+
+
+# def create
+#     @booking = Booking.new(booking_params)
+#     @experience = Experience.find(params[:experience_id])
+#     @booking.experience_id = params[:experience_id]
+#     @booking.price = @experience.price * @booking.people
+#     @booking.user = current_user
+#     authorize @booking
+#     if @experience.bookings.where(date: @booking.date).first
+#       redirect_to experience_path(@experience), notice: 'The chosen date is not available anymore'
+#     else
+#       if @booking.save
+#         redirect_to experience_booking_path(@experience, @booking)
+#       else
+#         redirect_to experience_path(@experience), notice: 'The chosen date is not available anymore'
+#       end
+#     end
+#   end
+
+#    def show
+#     @experience = Experience.find(params[:experience_id])
+#     @booking = Booking.find(params[:id])
+#     @user = current_user
+#     authorize @booking
+#   end
