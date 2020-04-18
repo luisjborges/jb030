@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
     payment_method_types: ['card'],
     line_items: [{
       name: @product.name,
-      images: [@product.photo.key],
+      # images: @order.product.photo,
       amount: @product.price_cents,
       currency: 'eur',
       quantity: 1
