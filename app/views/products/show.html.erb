@@ -1,31 +1,36 @@
-<div class="show-container">
-
-<h1><%= @product.name %> <%= humanized_money_with_symbol(@product.price) %></h1>
-<p><%= @product.description %></p>
-
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'product_id', @product.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
-
-</br>
-
-<% if @product.photo.attached? %>
-  <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
-<% else %>
-  <h1>No image to show</h1>
-<% end %>
-
-<%= link_to 'Back', products_path %>
-
-<% if policy(@product).edit? %>
-  <%= link_to 'Edit', edit_product_path(@product) %>
-<% end %>
-
-<% if policy(@product).destroy? %>
-  <%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-
+<div class="navbar navbar-expand-sm navbar-light navbar-jb">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+    <% end %>
 </div>
 
-<%= render 'shared/footerpages' %>
+
+<div class="show-product-container">
+  <div class="show-container">
+      <div class="product-show">
+          <% if @product.photo.attached? %>
+            <%= cl_image_tag @product.photo.key %>
+          <% else %>
+            <h1>No image to show</h1>
+          <% end %>
+          <div class="product-info">
+            <h1><%= @product.name %></h1>
+            <p><%= @product.description %></p>
+            <h4><%= @product.color %></h4>
+            <h4><%= @product.fabric %></h4>
+            <h4><%= @product.size %></h4>
+            <h1><%= humanized_money_with_symbol(@product.price) %></h1>
+              <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'product_id', @product.id %>
+              <%= submit_tag 'Purchase', class: 'btn btn-flat' %>
+          <% end %>
+          <p><%= @product.note %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
