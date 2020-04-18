@@ -8,19 +8,9 @@ Rails.application.routes.draw do
 
   resources :subscribers, only: [:new, :create, :index]
 
-  resources :vouchers
-
-  resources :products
-
   resources :products do
     collection do
-      get :coupon
-    end
-  end
-
-  resources :products do
-    collection do
-      get :shirt
+      get :shirt, :voucher
     end
   end
 

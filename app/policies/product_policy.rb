@@ -17,6 +17,14 @@ class ProductPolicy < ApplicationPolicy
     true
   end
 
+  def voucher?
+    true
+  end
+
+  def shirt?
+    true
+  end
+
   def update?
     user_is_owner?
   end

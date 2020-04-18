@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :voucher, :shirt]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -41,8 +41,14 @@ class ProductsController < ApplicationController
     redirect_to products_path, notice: "Product was succesfully deleted."
   end
 
-  def coupon
+  def voucher
     @products = Product.where(sku: 1)
+    authorize @products
+  end
+
+  def shirt
+    @products = Product.where(sku: 2)
+    authorize @products
   end
 
   private
