@@ -2,14 +2,13 @@ class OrdersController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    @order  = Order.create!(product: @product, product_sku: @product.sku, amount_cents: @product.price_cents, state: 'pending', user: current_user)
+    @order  = Order.create!(product: @product, amount_cents: @product.price_cents, state: 'pending', user: current_user)
     authorize @order
 
     session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
     line_items: [{
       name: @product.name,
-      # images: @order.product.photo,
       amount: @product.price_cents,
       currency: 'eur',
       quantity: 1
