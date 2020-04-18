@@ -1,4 +1,13 @@
 .new-container {
   background-color: white;
   color: black;
+  h1, h2, p {
+    color: black;
+    font-family: 'Sporting Grotesque';
+  }
+  h3 {
+    color: black;
+    font-size: 12px;
+    font-family: 'Sporting Grotesque';
+  }
 }
