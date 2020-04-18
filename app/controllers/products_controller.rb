@@ -41,8 +41,8 @@ class ProductsController < ApplicationController
     redirect_to products_path, notice: "Product was succesfully deleted."
   end
 
-  def top
-    @product = Product.where(price: 40)
+  def coupon
+    @products = Product.where(sku: 1)
   end
 
   private

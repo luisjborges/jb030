@@ -10,39 +10,23 @@ Rails.application.routes.draw do
 
   resources :vouchers
 
-  resources :products # do
-  #   collection do
-  #     get :top
-  #   end
-  # resources :reviews, only: [:new, :create]
-  # end
+  resources :products
 
-  # resources :reviews, only: [ :destroy ]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :products do
+    collection do
+      get :coupon
+    end
+  end
+
+  resources :products do
+    collection do
+      get :shirt
+    end
+  end
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
-
-  resources :requests, only: [:show, :create] do
-    resources :settlements, only: :new
-  end
-
-  # resources :ordervouchers, only: [:show, :create] do
-  #   resources :voucherpayments, only: :new
-  # end
-
-  # post '/ordervouchers(.:format)', to: 'ordervouchers#create', as: :ordervouchers do
-  #   resources :voucherpayments, only: :new
-  # end
-
-#   resources :orders, only: [:redeem] do
-#   collection do
-#     post :redeem, :as => :create_voucher do
-#      resources :payments, only: :new
-#     end
-#   end
-# end
 
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
