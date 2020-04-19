@@ -4,26 +4,62 @@
     <% end %>
 </div>
 
+<div class="checkout-container">s
 
-<div class="checkout-container">
-  <div class="bg-white">
+    <!-- restaurant info -->
+    <div class="bg-white">
       <div class="container p-3">
         <div class="row">
-          <div class="col-8">
+          <div class="col-md-8">
             <h1>Checkout summary</h1>
             <h3><%= @order.product.name %></h3>
           </div>
-          <div class="col-4">
-            <%= image_tag @order.product.photo, width: '100%' %></div>
+          <div class="col-md-4">
+            <%= image_tag @order.product.photo, width: '300' %></div>
           </div>
         </div>
       </div>
-  </div>
+    </div>
+    <!-- /restaurant info -->
 
-      <div class="col-md-4">
+    <!-- restaurant menu / checkout-->
+    <div class="container py-3">
+      <div class="row">
+        <div class="col-md-8">
+
+          <!-- turn this into an alert (warning) -->
+          <div class="alert alert-warning" role="alert">
+            Going to order alcohol? We'll need to see your <strong>ID</strong>.
+          </div>
+
+          <h2>12" Pizza</h2>
+
+          <!-- make a card -->
+          <div class="card p-3 mb-3">
+            <p class=""><strong>Regina</strong></p>
+            <p class=""><small>Tomato, basil, mozzarella</small></p>
+            <span class="">£5.95</span>
+          </div>
+
+          <!-- make a card -->
+          <div class="card p-3 mb-3">
+            <p class=""><strong>4 Formaggi</strong></p>
+            <p class=""><small>Tomato, basil, mozzarella</small></p>
+            <span class="">£5.95</span>
+          </div>
+
+          <!-- make a card -->
+          <div class="card p-3 mb-3">
+            <p class=""><strong>4 stagioni</strong></p>
+            <p class=""><small>Tomato, basil, mozzarella</small></p>
+            <span class="">£5.95</span>
+          </div>
+          <!-- /menu -->
+        </div>
+
+        <div class="col-md-4">
           <!-- checkout -->
           <div class="bg-white border p-3 sticky-top">
-
             <div class="d-flex justify-content-between mt-3">
               <p>Subtotal </p>
               <p><%= humanized_money_with_symbol @order.total %></p>
@@ -38,7 +74,8 @@
               <p>Total (VAT included) </p>
               <p><%= humanized_money_with_symbol @order.total %></p>
             </div>
-              <button id="pay" class="btn btn-flat">Pay</button>
+
+            <button id="pay" class="btn btn-flat w-100">Pay</button>
               <script src="https://js.stripe.com/v3/"></script>
               <script>
                 const paymentButton = document.getElementById('pay');
@@ -50,7 +87,8 @@
                 });
               </script>
           </div>
-
+          <!-- /checkout -->
+        </div>
       </div>
-
+    </div>
 </div>
