@@ -37,3 +37,30 @@
 
 <%= render 'shared/footer' %>
 
+<div class="listing-show-container">
+  <div class="booking-container">
+    <div class="experience-price">
+      <div class="d-flex">
+        <h2 id="experience-price"><%= @experience.price %></h2><h2 class="experience-euro">€</h2>
+      </div>
+      <p>(total price)</p>
+    </div>
+    <div class="booking-info">
+      <div class="booking-people">
+        <%= simple_form_for [@experience, @booking], :defaults => { :input_html => { :class => "datepicker size-date" } } do |f| %>
+          <i class="fas fa-user-friends"></i>
+          <span id="quantity-field">
+            <button type="button" id="down" onclick="setQuantity('down');setPrice();">-</button>
+            <input value="1", id="quantity" name="booking[people]" size="20" onkeyup="setPrice();">
+            <button type="button" id="up" onclick="setQuantity('up');setPrice();">+</button>
+          </span>
+          </div>
+          <div class="booking-date">
+            <i class="far fa-calendar"></i>
+            <%= f.input :date, as: :string, placeholder: "Select date" %>
+          </div>
+          </div>
+          <%= f.button :submit, 'Book now!', class: 'show-booking' %>
+        <% end %>
+  </div>
+</div>
