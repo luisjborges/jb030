@@ -18,22 +18,72 @@
             <h4><%= @product.color %></h4>
             <h4><%= @product.fabric %></h4>
             <h4><%= @product.size %></h4>
-            <h1><%= humanized_money_with_symbol(@product.price) %></h1>
-            <span id="quantity-field">
-            <button type="button" id="down" onclick="setQuantity('down');setPrice();">-</button>
-            <input value="1", id="quantity" name="booking[people]" size="20" onkeyup="setPrice();">
-            <button type="button" id="up" onclick="setQuantity('up');setPrice();">+</button>
-          </span>
-              <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'product_id', @product.id %>
-              <%= submit_tag 'Purchase', class: 'btn btn-flat' %>
-          <% end %>
-          </br>
-          <p><%= @product.note %></p>
       </div>
     </div>
   </div>
 </div>
 
-<%= render 'shared/footer' %>
+<div class="listing-show-container">
+  <div class="booking-container">
 
+    <div class="product-price">
+      <div class="d-flex">
+        <h2 id="product-price"><%= @product.price %></h2><h2 class="experience-euro">€</h2>
+      </div>
+        <p>(total price)</p>
+    </div>
+
+
+          <%= form_tag orders_path do %>
+          <%= hidden_field_tag 'product_id', @product.id %>
+
+          <span id="quantity-field">
+
+            <button type="button" id="down" onclick="setQuantity('down');setPrice();">-</button>
+
+            <input value="1", id="quantity" name="quantity" size="16" onkeyup="setPrice();">
+
+            <button type="button" id="up" onclick="setQuantity('up');setPrice();">+</button>
+
+          </span>
+
+              <%= submit_tag 'Purchase', class: 'btn btn-flat' %>
+
+          <% end %>
+
+
+  </div>
+</div>
+
+
+<script>
+    function setQuantity(upordown) {
+    var quantity = document.getElementById('quantity');
+
+    if (quantity.value > 1) {
+        if (upordown == 'up'){++document.getElementById('quantity').value;}
+        else if (upordown == 'down'){--document.getElementById('quantity').value;}}
+    else if (quantity.value == 1) {
+        if (upordown == 'up'){++document.getElementById('quantity').value;}}
+    else
+        {document.getElementById('quantity').value=1;}
+}
+</script>
+
+<script>
+  const startPrice = parseInt(document.getElementById('product-price').innerHTML)
+  const setPrice = () => {
+    let amount = document.getElementById('quantity').value;
+    if (amount == "") {
+      document.getElementById('product-price').innerHTML = 0
+    } else {
+    amount = parseInt(document.getElementById('quantity').value)
+    let newPrice = startPrice * amount;
+    document.getElementById('product-price').innerHTML = newPrice;
+    console.log(amount)
+      }
+  }
+</script>
+
+
+<%= render 'shared/footer' %>

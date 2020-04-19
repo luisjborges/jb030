@@ -9,7 +9,7 @@
     <div class="col-md-3"><%= image_tag @order.product.photo, width: '100%' %></div>
     <div class="col">
       <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @order.product.name %></strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
+      <p>Purchase of <strong><%= @order.product.name %></strong> for <strong><%= humanized_money_with_symbol @order.total %></strong></p>
       <button id="pay" class="btn btn-flat">Pay</button>
 
       <script src="https://js.stripe.com/v3/"></script>

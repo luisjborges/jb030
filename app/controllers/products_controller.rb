@@ -7,7 +7,9 @@ class ProductsController < ApplicationController
     @products = policy_scope(Product).order(created_at: :desc)
   end
 
-  def show; end
+  def show
+    @order = Order.new
+  end
 
   def new
     @product = Product.new
@@ -54,7 +56,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :photo, :note)
+    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :photo, :note, :quantity)
   end
 
   def set_product
