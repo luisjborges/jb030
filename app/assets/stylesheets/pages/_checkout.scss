@@ -1,4 +1,6 @@
-.checkout-container h1 {
+.checkout-container {
+  padding: 80px;
+h1 {
   font-family: 'Sporting Grotesque';
   font-size: 40px;
   color: black;
@@ -6,62 +8,11 @@
   margin-top: 24px;
 } p {
   font-family: 'Happy Times';
-  font-size: 14px;
-  color: black;
-} h4 {
+  font-size: 24px;
+  color: gray;
+} h3 {
   font-family: 'Happy Times';
-  font-size: 12px;
+  font-size: 24px;
   color: gray;
 }
-
-.checkout-container {
-  display: grid;
-  justify-content:center;
-  padding: 80px;
-}
-
-.product-show {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
-  padding: 16px;
-  background-color: white;
-  a {
-    color: #ff69b4;
-    text-decoration: none;
-  }
-  img {
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
-  }
-}
-
-@media(max-width: 992px) {
-  .product-show {
-    grid-template-columns: 1fr;
-    padding: 16px;
-  }
-  .product-info {
-    padding: 16px;
-  }
-}
-
-@media(max-width: 768px) {
-  .product-show {
-    grid-template-columns: 1fr;
-    padding: 16px;
-  }
-  .product-info {
-    padding: 16px;
-  }
-}
-
-.back-button {
-  font-family: 'Sporting Grotesque';
-  font-size: 28px;
-  color: #ff69b4;
-  text-decoration: none;
 }
