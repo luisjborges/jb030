@@ -1,3 +1,9 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-jb">
+  <%= link_to products_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+    <% end %>
+</div>
+
 <div class="show-container">
   <div class="row py-4">
     <div class="col-md-3"><%= image_tag @order.product.photo, width: '100%' %></div>
