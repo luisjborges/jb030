@@ -1,7 +1,7 @@
 class CreatePictures < ActiveRecord::Migration[6.0]
   def change
     create_table :pictures do |t|
-      t.string :image
+      t.string :photo
       t.references :product, null: false, foreign_key: true
 
       t.timestamps

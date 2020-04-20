@@ -58,7 +58,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :note, :quantity, :images)
+    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :note, :quantity, :pictures)
   end
 
   def set_product
@@ -67,10 +67,10 @@ class ProductsController < ApplicationController
   end
 
   def create_pictures
-    photos = params.dig(:product, :images) || []
-    photos.each do |image|
-      @product.pictures.create(image: image)
-    end
+    photos = params.dig(:product, :pictures) || []
+    photos.each do |photo|
+      @product.pictures.create(photo: photo)
   end
+end
 
 end
