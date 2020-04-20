@@ -8,8 +8,10 @@
         <p>
         <span id="banner-typed-text"></span>
         </p>
-        <a href="#sign-up" class="btn btn-flat">Shop now</a>
+        <%= link_to "Shop now", products_path, class: 'btn btn-flat' %>
       </div>
     </div>
   </div>
 </div>
+
+<%= render 'shared/footer' %>
