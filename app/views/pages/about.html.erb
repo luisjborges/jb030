@@ -1,15 +1,58 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-jb">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "logo-black.jpg" %>
-    <% end %>
-</div>
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <h1>About us</h1>
-    </div>
+<div class="container-about">
+  <div class="navbar navbar-expand-sm navbar-light navbar-jb">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo-black.jpg" %>
+      <% end %>
   </div>
-</div>
 
-<%= render 'shared/footerpages' %>
+  <div class="container-home">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-8">
+        <div class="outer-wrapper">
+          <div class="wrapper">
+            <div class="slide one" id="slide1"></div>
+              <div class="slide-content">
+                <h2>WHERE THE PINK LIGHT IS</h2>
+                <p>
+                  <%= 'JUNGBUSCH BERLIN takes the temporary closure due to COVID-19 restrictions as a moment to create something new during the rough times the world is facing at the moment.' %>
+                </br>
+                </br>
+                  <%= 'Everyone has to make compromises and the loss of certain perks, regarding free time activities, is what we have to face during these days along with many more changes and challenges.' %>
+                </br>
+                </br>
+                  <%= 'The only way to do the best out of the situation is to continue and stay positive. And that what we did in the past weeks @ JUNGBUSCH NULL DREI NULL.' %>
+                </p>
+                <h3>→</h3>
+              </div>
+            <div class="slide two"></div>
+              <div class="slide-content">
+                <h2>NULL DREI NULL</h2>
+                <p>
+                  <%= 'We wanted to share something new with you – our regulars, our cocktail lovers and both, friends and opponents – a LIMITED JUNGBUSCH GEAR to be close by heart and close by your bodies.' %>
+                </br>
+                </br>
+                  <%= 'We designed two styles of T-SHIRTS for all genders. We will be producing them locally and you can pre-order already!' %>
+                </br>
+                </br>
+                  <strong><%= '- Orders will be taken until May 15th 2020. ' %></strong>
+                </br>
+                  <strong><%= '- T-Shirts delivery will start by end of May 2020.' %></strong>
+                </br>
+                </br>
+                  <%= 'On top, we will come up with an additional concept to quench the thirst. Stay tuned, follow us at Instagram and Facebook. We definitely miss you as hell and we appreciate your support. Above all: take care and stay healthy till we get back to real life.' %>
+                </p>
+                <h3>→</h3>
+              </div>
+            <div class="slide three"></div>
+              <div class="slide-content" id="sign-up">
+                <h2>LOVE, JB030</h2><h3>↓</h3>
+                <h1>Keep me updated:</h1>
+                <%= render "subscribers/subscribeform" %>
+                <%= render 'shared/footerhome' %>
+              </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
