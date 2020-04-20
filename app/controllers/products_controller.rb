@@ -23,7 +23,8 @@ class ProductsController < ApplicationController
     @product.save
 
     if @product.save
-      redirect_to products_path, notice: "Product was succesfully published."
+      create_pictures
+      redirect_to product_path(@product), notice: "Product was succesfully published."
     else
       render :new
     end
@@ -57,7 +58,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :note, :quantity, photos: [])
+    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :note, :quantity, :images)
   end
 
   def set_product
@@ -65,11 +66,11 @@ class ProductsController < ApplicationController
     authorize @product
   end
 
-#   def create_pictures
-#   photos = params.dig(:product, :pictures) || []
-#   photos.each do |photo|
-#     @product.pictures.create(photo: photo)
-#   end
-# end
+  def create_pictures
+    photos = params.dig(:product, :images) || []
+    photos.each do |image|
+      @product.pictures.create(image: image)
+    end
+  end
 
 end
