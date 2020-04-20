@@ -23,7 +23,6 @@ class ProductsController < ApplicationController
     @product.save
 
     if @product.save
-      create_pictures
       redirect_to products_path, notice: "Product was succesfully published."
     else
       render :new
@@ -33,7 +32,6 @@ class ProductsController < ApplicationController
   def edit; end
 
   def update
-    authorize @product
     if @product.update(product_params)
       redirect_to product_path(@product), notice: "Product was succesfully updated."
     else
@@ -67,11 +65,11 @@ class ProductsController < ApplicationController
     authorize @product
   end
 
-  def create_pictures
-  photos = params.dig(:product, :pictures) || []
-  photos.each do |photo|
-    @product.pictures.create(photo: photo)
-  end
-end
+#   def create_pictures
+#   photos = params.dig(:product, :pictures) || []
+#   photos.each do |photo|
+#     @product.pictures.create(photo: photo)
+#   end
+# end
 
 end

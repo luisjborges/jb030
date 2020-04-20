@@ -14,7 +14,7 @@
         <h3>
           <%= simple_form_for @product do |f| %>
             <%= f.input :sku %>
-            <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true} %>
             <%= f.input :name %>
             <%= f.input :description %>
             <%= f.input :price_cents, label: 'Price' %>

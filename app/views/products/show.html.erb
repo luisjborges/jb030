@@ -6,18 +6,15 @@
 
 <div class="show-product-container">
   <div class="show-container">
-      <div class="product-show">
-          <% if @product.photo.attached? %>
-            <%= cl_image_tag @product.photo.key %>
-          <% else %>
-            <h1>No image to show</h1>
-          <% end %>
-          <div class="product-info">
-            <h1><%= @product.name %></h1>
-            <p><%= @product.description %></p>
-            <h4><%= @product.color %></h4>
-            <h4><%= @product.fabric %></h4>
-            <h4><%= @product.size %></h4>
+    <%= @product.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+      <%= end %>
+      <div class="product-info">
+        <h1><%= @product.name %></h1>
+        <p><%= @product.description %></p>
+        <h4><%= @product.color %></h4>
+        <h4><%= @product.fabric %></h4>
+        <h4><%= @product.size %></h4>
       </div>
     </div>`
   </div>

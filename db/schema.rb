@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_170035) do
+ActiveRecord::Schema.define(version: 2020_04_20_190659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_170035) do
 
   create_table "orders", force: :cascade do |t|
     t.string "state"
+    t.string "product_sku"
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.bigint "user_id", null: false
@@ -62,28 +63,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_170035) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity"
-    t.string "size"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.integer "amount_cents", default: 0, null: false
-    t.string "amount_currency", default: "EUR", null: false
-    t.bigint "user_id", null: false
-    t.bigint "order_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_payments_on_order_id"
-    t.index ["user_id"], name: "index_payments_on_user_id"
-  end
-
-  create_table "pictures", force: :cascade do |t|
-    t.string "photo"
-    t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_pictures_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -97,9 +78,9 @@ ActiveRecord::Schema.define(version: 2020_04_20_170035) do
     t.bigint "user_id", null: false
     t.integer "price_cents", default: 0, null: false
     t.string "name"
-    t.string "note"
     t.string "sku"
     t.integer "quantity"
+    t.string "note"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -138,9 +119,6 @@ ActiveRecord::Schema.define(version: 2020_04_20_170035) do
   add_foreign_key "deliveries", "users"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "payments", "orders"
-  add_foreign_key "payments", "users"
-  add_foreign_key "pictures", "products"
   add_foreign_key "products", "users"
   add_foreign_key "reviews", "products"
 end
