@@ -12,7 +12,6 @@
       <% @products.each do |product| %>
         <%= link_to product_path(product) do %>
           <div class="card-trip">
-            <%= cl_image_tag product.photo.key %>
               <div class="card-trip-infos">
                 <div>
                   <h2> <%= product.name %></h2>

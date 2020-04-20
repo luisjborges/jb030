@@ -20,8 +20,10 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     authorize @product
+    @product.save
 
     if @product.save
+      create_pictures
       redirect_to products_path, notice: "Product was succesfully published."
     else
       render :new
@@ -31,6 +33,7 @@ class ProductsController < ApplicationController
   def edit; end
 
   def update
+    authorize @product
     if @product.update(product_params)
       redirect_to product_path(@product), notice: "Product was succesfully updated."
     else
@@ -56,12 +59,19 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :photo, :note, :quantity)
+    params.require(:product).permit(:sku, :name, :description, :price_cents, :color, :fabric, :delivery, :size, :note, :quantity, photos: [])
   end
 
   def set_product
     @product = Product.find(params[:id])
     authorize @product
   end
+
+  def create_pictures
+  photos = params.dig(:product, :pictures) || []
+  photos.each do |photo|
+    @product.pictures.create(photo: photo)
+  end
+end
 
 end
