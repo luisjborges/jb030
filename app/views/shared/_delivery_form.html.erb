@@ -1,5 +1,5 @@
 
-<div class="signup-container">
+<div class="delivery-form">
 
     <%= simple_form_for [@order, @delivery] do |f| %>
     <%= f.error_notification %>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="form-actions button-centered">
-        <%= f.button :submit, "Next", class: "btn btn-flat wj-100" %>
+        <%= f.button :submit, "Submit your info", class: "btn btn-flat wj-150" %>
       </div>
     <% end %>
 </div>

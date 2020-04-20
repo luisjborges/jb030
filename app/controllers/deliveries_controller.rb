@@ -12,11 +12,11 @@ class DeliveriesController < ApplicationController
     @delivery.user = current_user
     @delivery.order = @order
     authorize @delivery
-    @delivery.save!
+    @delivery.save
     if @delivery.save
       redirect_to order_delivery_path(@order, @delivery), notice: 'Thanks so much for your help!'
     else
-      redirect_to order_path(@order), notice: 'Please review the form'
+      redirect_to order_path(@order), notice: 'Please review the form, information is missing'
     end
   end
 
