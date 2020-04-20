@@ -1,4 +1,11 @@
 class OrdersController < ApplicationController
+# before_action :find_order
+
+  def new
+    @order = Order.new(order_params)
+    authorize @order
+    redirect_to root_path
+  end
 
   def create
     @product = Product.find(params[:product_id])
@@ -26,6 +33,16 @@ class OrdersController < ApplicationController
   def show
   @order = current_user.orders.find(params[:id])
   authorize @order
+  end
+
+  private
+
+  def find_order
+    @order = Order.find(params[:id])
+  end
+
+  def order_params
+    params.require(:order).permit(:first_name, :last_name)
   end
 
 end

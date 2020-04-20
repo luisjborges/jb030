@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'country_select'
 gem 'stripe_event'
 gem 'money-rails'
 gem 'stripe'
