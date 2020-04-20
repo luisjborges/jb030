@@ -4,18 +4,25 @@
     <% end %>
 </div>
 
-<div class="show-container">
-  <div class="row py-4">
-    <div class="col-md-3"><%= image_tag @order.product.photo, width: '100%' %></div>
-    <div class="col">
-      <h1>Order <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+<div class="order-container">
+  <div class="show-container">
+      <div class="product-show">
+            <%= image_tag @order.product.photo %>
+          <div class="product-info">
+            <h1>Order <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date.strftime("%d/%m/%Y")  %></li>
         <li><strong>PRODUCT</strong> <%= @order.product.name %></li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
+        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount_cents %></li>
         </li>
       </ul>
-      <p>Thank you <strong>so much</strong> for your support!</p>
-    </div>
+    </br>
+    </br>
+    </br>
+      <h1>Please give us your delivery details:</h1>
+      </div>
+    </div>`
   </div>
 </div>
+
+<%= render template: "deliveries/new" %>

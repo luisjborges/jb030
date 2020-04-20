@@ -39,6 +39,14 @@
   }
 }
 
+.product-info {
+  h1 {
+    color: black;
+    font-size: 30px;
+    font-family: 'Sporting Grotesque';
+  }
+}
+
 @media(max-width: 992px) {
   .product-show {
     grid-template-columns: 1fr;

@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+  @delivery = Delivery.new
   @order = current_user.orders.find(params[:id])
   authorize @order
   end
