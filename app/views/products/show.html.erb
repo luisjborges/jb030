@@ -31,8 +31,8 @@
         <h2 id="product-price"><%= @product.price %></h2><h2 class="experience-euro">€</h2>
       </div>
         <p>(total price)</p>
-    </div>
 
+    </div>
 
           <%= form_tag orders_path do %>
           <%= hidden_field_tag 'product_id', @product.id %>
@@ -47,10 +47,20 @@
 
           </span>
 
-              <%= submit_tag 'Purchase', class: 'btn btn-flat' %>
+          <select name="size" required>
+            <option value="">Select size</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="2XL">2XL</option>
+            <option value="3XL">3XL</option>
+            <option value="Voucher">Voucher</option>
+          </select>
 
-          <% end %>
+        <%= submit_tag 'Purchase', class: 'btn btn-flat' %>
 
+    <% end %>
   </div>
 </div>
 

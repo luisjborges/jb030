@@ -10,7 +10,7 @@
 </div>
 
 
-<div class="checkout-container">s
+<div class="checkout-container">
 
     <!-- restaurant info -->
     <div class="bg-white">
@@ -18,10 +18,10 @@
         <div class="row">
           <div class="col-md-8">
             <h1>Checkout summary</h1>
-            <%= raise %>
-            <h3><%= @order.product.name %></h3>
-            <p><%= @order.product.color %></p>
-            <p><%= @order.quantity %></p>
+            <p><u>You requested:</u> <%= @order.product.name %></p>
+            <p><u>Size:</u> <%= @order.size %></p>
+            <p><u>Number of items:</u> <%= @order.quantity %></p>
+            <p><u>Total to be paid:</u> <%= @order.quantity %> x <%= @order.product.price_cents / 100 %> = <%= humanized_money_with_symbol @order.amount_cents %></p>
           </div>
           <div class="col-md-4">
             <%= image_tag @order.product.photo, width: '300' %></div>
@@ -30,26 +30,20 @@
       </div>
     </div>
 
-    <!-- /restaurant info -->
-
     <!-- restaurant menu / checkout-->
-    <div class="container py-3">
+    <div class="container py-3" id="checkout-font">
       <div class="row">
         <div class="col-md-8">
-
           <!-- make a card -->
           <div class="card p-3 mb-3">
-            <p class=""><strong>Regina</strong></p>
-            <p class=""><small>Tomato, basil, mozzarella</small></p>
-            <span class="">£5.95</span>
+            <h1>Delivery</h1>
+            <p><%= @order.product.delivery %></p>
+          </div>
+          <div class="card p-3 mb-3">
+            <h1>Important:</h1>
+            <p><%= @order.product.note %></p>
           </div>
 
-          <!-- make a card -->
-          <div class="card p-3 mb-3">
-            <p class=""><strong>4 stagioni</strong></p>
-            <p class=""><small>Tomato, basil, mozzarella</small></p>
-            <span class="">£5.95</span>
-          </div>
           <!-- /menu -->
         </div>
 

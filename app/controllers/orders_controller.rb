@@ -1,14 +1,9 @@
 class OrdersController < ApplicationController
 
-  def new
-    @order = Order.find(params[:order_id])
-    authorize @order
-    redirect_to root_path
-  end
-
   def create
     @product = Product.find(params[:product_id])
     @product.quantity = params[:quantity]
+    @product.size = params[:size]
     @order  = Order.create!(product: @product, state: 'pending', user: current_user, quantity: @product.quantity, size: @product.size)
     @order.amount_cents = (@product.price_cents * @product.quantity)/100
     authorize @order
@@ -35,34 +30,3 @@ class OrdersController < ApplicationController
   end
 
 end
-
-# def new
-#     @dress = Dress.find(params[:dress_id])
-#     @booking = Booking.new
-#     authorize @booking
-#   end
-
-#   def create
-#     @booking = Booking.new(booking_params)
-#     @dress = Dress.find(params[:dress_id])
-#     @booking.user = current_user
-#     @booking.dress = @dress
-#     @dress.available = false
-#     authorize @booking
-#     if @booking.save && @dress.save
-#       redirect_to user_dashboard_path, notice: 'Booking was successful'
-#     else
-#       render :new
-#     end
-#   end
-
-#   private
-
-#   def set_dress
-#     @dress = Dress.find(params[:id])
-#   end
-
-#   def booking_params
-#     params.require(:booking).permit(:rent_date, :dress_id)
-#   end
-# end
