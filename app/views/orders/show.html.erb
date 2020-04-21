@@ -4,24 +4,87 @@
     <% end %>
 </div>
 
-<div class="order-container">
-  <div class="delivery-container">
-      <div class="product-show">
-            <%= image_tag @order.product.photo %>
-          <div class="product-info">
-            <h1>Order <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="list-unstyled">
-        <li><strong>Issued on:</strong> <%= @order.created_at.to_date.strftime("%d/%m/%Y")  %></li>
-        <li><strong>Product:</strong> <%= @order.product.name %></li>
-        <li><strong>Total paid:</strong> <%= humanized_money_with_symbol @order.amount_cents %></li>
-        </li>
-      </ul>
-    </br>
-      <h1>Please give us your delivery details:</h1>
-      <%= render template: "deliveries/new" %>
+<div class="checkout-container">
+
+    <!-- restaurant info -->
+    <div class="bg-white">
+      <div class="container p-3">
+        <div class="row">
+          <div class="col-md-8">
+            <h1>Payment summary</h1>
+            <p><u>Status:</u> <span class="badge badge-payment"><%= @order.state %></span></small></h1>
+            <p><u>Issued on:</u> <%= @order.created_at.to_date.strftime("%d/%m/%Y")  %></p>
+            <p><u>Product:</u> <%= @order.product.name %></p>
+            <p><u>Number of items:</u> <%= @order.quantity %></p>
+            <p><u>Total paid:</u> <%= humanized_money_with_symbol @order.amount_cents %></p>
+          </div>
+          <div class="col-md-4">
+            <%= cl_image_tag @order.product.pictures[0].photo, width: '300' %></div>
+          </div>
+          </div>
+        </div>
       </div>
-    </div>`
-  </div>
+    </div>
+
+    <!-- restaurant menu / checkout-->
+    <div class="container py-3" id="checkout-font">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- make a card -->
+          <div class="card p-3 mb-3">
+            <h1>Please give us your details for delivery:</h1>
+          </div>
+            <div class="delivery-form">
+              <%= simple_form_for [@order, @delivery] do |f| %>
+              <%= f.error_notification %>
+
+                <div class="form-inputs" id="delivery-form">
+                <%= f.input :first_name,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "first_name" } %>
+                <%= f.input :last_name,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "last_name" } %>
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                <%#= f.input :street,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                <%#= f.input :house_number,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                <%#= f.input :city,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                <%#= f.input :post_code,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                <%#= f.input :country, placeholder: "Germany",
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                </div>
+
+                <div class="form-actions button-centered">
+                  <%= f.button :submit, "Submit your info", class: "btn btn-flat wj-150" %>
+                </div>
+              </br>
+              </br>
+              </br>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>
 
 <%= render 'shared/footer' %>

@@ -49,7 +49,7 @@
 
         <div class="col-md-4">
           <!-- checkout -->
-          <div class="bg-white border p-3 sticky-top">
+          <div class="bg-white border p-3 sticky-top" id="pay-container">
             <div class="d-flex justify-content-between mt-3">
               <p>Subtotal </p>
               <p><%= humanized_money_with_symbol @order.amount_cents %></p>
@@ -62,7 +62,7 @@
 
             <div class="d-flex justify-content-between mt-3">
               <p>Total (VAT included) </p>
-              <p><%= humanized_money_with_symbol @order.amount_cents %></p>
+              <strong><p><%= humanized_money_with_symbol @order.amount_cents %></p></strong>
             </div>
 
             <button id="pay" class="btn btn-flat w-100">Pay</button>

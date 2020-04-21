@@ -22,9 +22,32 @@ h1 {
   font-size: 24px;
   color: black;
   }
+  label {
+  font-family: 'Sporting Grotesque';
+  font-size: 14px;
+  color: black;
+  }
 }
 
 .delivery-container {
   display: grid;
   justify-content:center;
+}
+
+#pay-container {
+  p {
+    font-size: 20px;
+  }
+}
+
+.badge-payment {
+  color: white;
+  background-color: green;
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+}
+
+#delivery-form {
+  text-align: left;
 }
