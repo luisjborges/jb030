@@ -48,6 +48,7 @@
               <div class="product-price">
                   <h2 id="product-price"><%= @product.price %></h2>
               </div>
+                <%= form_tag orders_path do %> <%= hidden_field_tag 'product_id', @product.id %>
           </div>
 
             <div class="d-flex justify-content-between mt-3 border-bottom">
@@ -74,6 +75,7 @@
             </div>
 
             <%= submit_tag 'Purchase', class: 'btn btn-flat w-100' %>
+          <% end %>
 
           </div>
           <!-- /checkout -->
