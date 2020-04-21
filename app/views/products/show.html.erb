@@ -4,6 +4,8 @@
     <% end %>
 </div>
 
+<%#= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <div class="show-product-container">
   <div class="show-container">
       <% @product.pictures.each do |picture| %>
