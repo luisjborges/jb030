@@ -19,9 +19,15 @@
           </div>
           <div class="col-md-4">
             <h1><%= @product.name %></h1>
+            </br>
             <h4><%= @product.color %></h4>
             <h4><%= @product.fabric %></h4>
             <h4><%= @product.size %></h4>
+          </br>
+          </br>
+            <%= image_tag "ep-logo.png", width: '70' %>
+            <%= image_tag "fair-logo.png", width: '120'%>
+            <%= image_tag "peta-logo.jpg", width: '120' %>
           </div>
         </div>
       </div>
@@ -36,7 +42,6 @@
             <h1>Product Details</h1>
             <p><%= @product.description %></p>
           </div>
-          <!-- /menu -->
         </div>
 
         <div class="col-md-4">
