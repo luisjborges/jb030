@@ -46,3 +46,43 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+.delivery-container h1 {
+  font-family: 'Sporting Grotesque';
+  font-size: 40px;
+  color: black;
+  padding-left: 16px;
+  padding-top: 30px;
+}
+
+#delivery-font {
+    p {
+  font-family: 'Happy Times';
+  font-size: 20px;
+  color: black;
+  padding-left: 16px;
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.social-links {
+  display: flex;
+  align-items: center;
+}
+.social-links a {
+  color: black;
+  opacity: 0.15;
+  font-size: 50px;
+  padding: 0px 10px;
+}
+.social-links a:hover {
+  opacity: 1;
+}
