@@ -24,7 +24,7 @@
             <p><u>Total to be paid:</u> <%= @order.quantity %> x <%= @order.product.price_cents / 100 %> = <%= humanized_money_with_symbol @order.amount_cents %></p>
           </div>
           <div class="col-md-4">
-            <%= image_tag @order.product.photo, width: '300' %></div>
+            <%= cl_image_tag @order.product.pictures[0].photo, width: '300' %></div>
           </div>
         </div>
       </div>

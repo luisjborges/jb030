@@ -88,12 +88,35 @@
   font-family: 'Sporting Grotesque'
 }
 
-.product-price {
-  h2 {
+#product-size img {
+  width: 350px;
+}
+
+#quantity {
   font-family: 'Sporting Grotesque';
-  font-size: 40px;
+  font-size: 17px;
   color: black;
-  text-align: left;
-  margin-top: 24px;
+  text-align: center;
+}
+
+.newshow-container {
+  h1 {
+    font-family: 'Sporting Grotesque';
+    font-size: 40px;
+    color: black;
+    text-align: left;
+    margin-top: 24px;
+  } p {
+    font-family: 'Happy Times';
+    font-size: 16px;
+    color: gray;
+  } h4 {
+    font-family: 'Happy Times';
+    font-size: 18px;
+    color: gray;
+  }  h2 {
+    font-family: 'Sporting Grotesque';
+    font-size: 32px;
+    color: black;
   }
 }

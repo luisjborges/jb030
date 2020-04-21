@@ -6,63 +6,81 @@
 
 <%#= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<div class="show-product-container">
-  <div class="show-container">
-      <% @product.pictures.each do |picture| %>
-      <%= cl_image_tag(picture.photo) %>
-      <% end %>
-      <div class="product-info">
-        <h1><%= @product.name %></h1>
-        <p><%= @product.description %></p>
-        <h4><%= @product.color %></h4>
-        <h4><%= @product.fabric %></h4>
-        <h4><%= @product.size %></h4>
+<div class="newshow-container">
+
+    <!-- restaurant info -->
+    <div class="bg-white">
+      <div class="container p-3">
+        <div class="row">
+          <div class="col-md-8" id="product-size">
+            <% @product.pictures.each do |picture| %>
+            <%= cl_image_tag(picture.photo) %>
+            <% end %>
+          </div>
+          <div class="col-md-4">
+            <h1><%= @product.name %></h1>
+            <h4><%= @product.color %></h4>
+            <h4><%= @product.fabric %></h4>
+            <h4><%= @product.size %></h4>
+          </div>
+        </div>
       </div>
-    </div>`
-  </div>
-</div>
-
-<div class="listing-show-container">
-  <div class="booking-container">
-
-    <div class="product-price">
-      <div class="d-flex">
-        <h2 id="product-price"><%= @product.price %></h2><h2 class="experience-euro">€</h2>
-      </div>
-        <p>(total price)</p>
-
     </div>
 
-          <%= form_tag orders_path do %>
-          <%= hidden_field_tag 'product_id', @product.id %>
+    <!-- restaurant menu / checkout-->
+    <div class="container py-3" id="checkout-font">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- make a card -->
+          <div class="card p-3 mb-3">
+            <h1>Product Details</h1>
+            <p><%= @product.description %></p>
+          </div>
+          <!-- /menu -->
+        </div>
 
-          <span id="quantity-field">
+        <div class="col-md-4">
+          <!-- checkout -->
+          <div class="bg-white border p-3 sticky-top">
+            <div class="d-flex justify-content-between mt-3">
+              <p>Total Price</p>
+              <h2 id="euro">€</h2>
+              <div class="product-price">
+                  <h2 id="product-price"><%= @product.price %></h2>
+              </div>
+          </div>
 
-            <button type="button" id="down" onclick="setQuantity('down');setPrice();">-</button>
+            <div class="d-flex justify-content-between mt-3 border-bottom">
+              <p>Size </p>
+              <p><select name="size" required>
+                    <option value="">Select size</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="2XL">2XL</option>
+                    <option value="3XL">3XL</option>
+                    <option value="Voucher">Voucher</option>
+              </select></p>
+            </div>
 
-            <input value="1", id="quantity" name="quantity" size="16" onkeyup="setPrice();">
+            <div class="d-flex justify-content-between mt-3 border-bottom">
+              <p>Quantity </p>
+              <p><span id="quantity-field">
+                  <button type="button" id="down" onclick="setQuantity('down');setPrice();">-</button>
+                  <input value="1", id="quantity" name="quantity" size="10" onkeyup="setPrice();">
+                  <button type="button" id="up" onclick="setQuantity('up');setPrice();">+</button>
+                </span></p>
+            </div>
 
-            <button type="button" id="up" onclick="setQuantity('up');setPrice();">+</button>
+            <%= submit_tag 'Purchase', class: 'btn btn-flat w-100' %>
 
-          </span>
-
-          <select name="size" required>
-            <option value="">Select size</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="2XL">2XL</option>
-            <option value="3XL">3XL</option>
-            <option value="Voucher">Voucher</option>
-          </select>
-
-        <%= submit_tag 'Purchase', class: 'btn btn-flat' %>
-
-    <% end %>
-  </div>
+          </div>
+          <!-- /checkout -->
+        </div>
+      </div>
+    </div>
 </div>
-
 
 <script>
     function setQuantity(upordown) {
