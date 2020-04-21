@@ -1,13 +1,14 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-jb">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "logo.png" %>
-    <% end %>
-</div>
+<div class="container-black">
+  <div class="navbar navbar-expand-sm navbar-light navbar-jb">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo-black.jpg" %>
+      <% end %>
+  </div>
 
 <div class="product-container">
 
 <div class="index-container">
-  <h1>Shirts</h1>
+  <h1>SHIRTS</h1>
     <div class="product-cards">
       <% @products.each do |product| %>
         <%= link_to product_path(product) do %>
@@ -28,6 +29,10 @@
     </div>
   </div>
 
-</div>
+</br>
+</br>
+</br>
+</br>
 
-<%= render 'shared/footerpages' %>
+
+</div>

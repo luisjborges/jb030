@@ -10,6 +10,10 @@
   justify-content:center;
   padding-top: 36px;
   padding-bottom: 36px;
+  background-color: black;
+  h1 {
+    color: #ff69b4;
+  }
 }
 
 .product-cards {
@@ -17,7 +21,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 24px;
   padding: 16px;
-  background-color: white;
+  background-color: black;
   text-decoration: none;
   a {
     color: #ff69b4;
