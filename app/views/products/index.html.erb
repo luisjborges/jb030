@@ -4,21 +4,31 @@
     <% end %>
 </div>
 
-<div class="product-container">
-
-
  <%= link_to "Add new", new_product_path, class: '#' %>
 
-<div class="index-container">
-  <h1>All Products</h1>
-    <div class="product-cards">
-
-
+<div class="product-container">
+  <div class="index-container">
+    <h1>All Products</h1>
+      <div class="product-cards">
+        <% @products.each do |product| %>
+          <%= link_to product_path(product) do %>
+            <div class="card-trip">
+                <%= cl_image_tag product.pictures[0].photo %>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2> <%= product.name %></h2>
+                    <p> <%= product.color %></p>
+                    <h3> <%= product.size %></h3>
+                  </div>
+                  <h1 class="card-trip-pricing"><h1><%= humanized_money_with_symbol(product.price) %></h1>
+                  <%#= cl_image_tag product.user.photo.key, class: "card-trip-user avatar-bordered" %>
+                </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
-
 </div>
 
 <%= render 'shared/footer' %>
-
 

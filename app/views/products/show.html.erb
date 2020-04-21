@@ -9,7 +9,6 @@
       <% @product.pictures.each do |picture| %>
       <%= cl_image_tag(picture.photo) %>
       <% end %>
-    </ul>
       <div class="product-info">
         <h1><%= @product.name %></h1>
         <p><%= @product.description %></p>
