@@ -5,10 +5,14 @@
 </div>
 
 <!-- turn this into an alert (warning) -->
-<div class="alert alert-warning" role="alert" id="checkout-font">
-  We will ask for your <strong>shipping details</strong> after we process your payment.
-</div>
-
+<% if @order.product.size.empty? %>
+  <p></p>
+<% else %>
+  <div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">Shipping notice:</h4>
+    <p class="my-auto" style="width: 180px;">We will ask for your <strong>shipping details</strong> after we process your payment.</p>
+  </div>
+<% end %>
 
 <div class="checkout-container">
 

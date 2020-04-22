@@ -56,6 +56,9 @@
                 <%= form_tag orders_path do %> <%= hidden_field_tag 'product_id', @product.id %>
           </div>
 
+          <% if @product.size.empty? %>
+              <p></p>
+          <% else %>
             <div class="d-flex justify-content-between mt-3 border-bottom">
               <p>Size </p>
               <p><select name="size" required>
@@ -69,6 +72,7 @@
                     <option value="Voucher">Voucher</option>
               </select></p>
             </div>
+            <% end %>
 
             <div class="d-flex justify-content-between mt-3 border-bottom">
               <p>Quantity </p>
@@ -117,7 +121,4 @@
       }
   }
 </script>
-
-
-<%= render 'shared/footer' %>
 
