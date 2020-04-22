@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "about", to: "pages#about"
   get "faq", to: "pages#faq"
   get "imprint", to: "pages#imprint"
-  get "privacy", to: "pages#privacy"
+  get "agb", to: "pages#agb"
 
   resources :subscribers, only: [:new, :create, :index]
 

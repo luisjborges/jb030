@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   def imprint
   end
 
-  def privacy
+  def agb
   end
 
 end

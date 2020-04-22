@@ -1,8 +1,10 @@
 <%= render 'shared/navbar' %>
+<%= render 'cookies_eu/consent_banner' %>
+
 
 <div class="home-banner">
 
-  <div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <div class="alert alert-primary alert-dismissible fade show" role="alert" id="ngo-label">
   <strong>Helping others:</strong> with every T-SHIRT transaction we donate <strong>5 €</strong> to an NGO in Berlin.
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
@@ -22,5 +24,6 @@
   </div>
 </div>
 </div>
+
 
 <%= render 'shared/footer' %>
