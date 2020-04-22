@@ -26,16 +26,13 @@
       </div>
     </div>
 
-    <% if @order.product.size.empty? %>
-      <p></p>
-    <% else %>
     <!-- restaurant menu / checkout-->
     <div class="container py-3" id="checkout-font">
       <div class="row">
         <div class="col-md-8">
           <!-- make a card -->
           <div class="card p-3 mb-3">
-            <h1>Please give us your details for delivery:</h1>
+            <h1>Please give us your details for delivery of shirts:</h1>
           </div>
             <div class="delivery-form">
               <%= simple_form_for [@order, @delivery] do |f| %>
@@ -50,27 +47,27 @@
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "last_name" } %>
-                <%#= f.input :email,
+                <%= f.input :email,
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" }%>
-                <%= f.input :street,
+                <%#= f.input :street,
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" }%>
-                <%= f.input :house_number,
+                <%#= f.input :house_number,
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" }%>
-                <%= f.input :city,
+                <%#= f.input :city,
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" }%>
-                <%= f.input :post_code,
+                <%#= f.input :post_code,
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" }%>
-                <%= f.input :country, placeholder: "Germany",
+                <%#= f.input :country, placeholder: "Germany",
                             required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" }%>
@@ -87,6 +84,4 @@
         </div>
       </div>
     </div>
-    <% end %>
-
 </div>
