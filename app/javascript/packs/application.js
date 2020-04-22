@@ -2,7 +2,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require ("turbolinks")
-require ("cookies_eu")
+// require ("cookies_eu")
 
 import "bootstrap";
 
