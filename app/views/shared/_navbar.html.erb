@@ -13,14 +13,13 @@
         <li class="nav-item">
           <%= link_to "JB SAYS HI", about_path, class: "nav-link", id:"navbar-font" %>
         </li>
-        <span class="badge badge-pill badge-light" id="soon-font">Soon!</span>
         <li class="nav-item">
           <li class="nav-item dropdown">
           <%= link_to "MARKET", '#', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Vouchers", '#', class: "dropdown-item" %>
-                <%= link_to "Shirts", '#', class: "dropdown-item" %>
-                <%= link_to "All Products", '#', class: "dropdown-item" %>
+                <%= link_to "Vouchers", voucher_products_path, class: "dropdown-item" %>
+                <%= link_to "Shirts", shirt_products_path, class: "dropdown-item" %>
+                <%= link_to "All Products", products_path, class: "dropdown-item" %>
               </div>
             </li>
         <% if user_signed_in? %>
@@ -38,7 +37,7 @@
           </li>
         <% else %>
         <li class="nav-item">
-          <%#= link_to "LOGIN | REGISTER", new_user_session_path, class: "nav-link", id:"navbar-font" %>
+          <%= link_to "LOGIN | REGISTER", new_user_session_path, class: "nav-link", id:"navbar-font" %>
         </li>
         <% end %>
       </ul>
@@ -46,3 +45,4 @@
   </div>
 </div>
 
+<!--           <span class="badge badge-pill badge-light" id="soon-font">Soon!</span> -->
