@@ -28,7 +28,16 @@
 
 
     <% if @order.product.size.empty? %>
-      <p></p>
+      <div class="delivery-container" id="delivery-font">
+        <h1>Thanks for supporting us!</h1>
+        <p>Follow us on social media:</p>
+      </div>
+      <div class="social">
+        <div class="social-links">
+          <a href="https://www.instagram.com/jungbusch_berlin/?hl=en"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/jungbuschberlin/"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
     <% else %>
     <!-- restaurant menu / checkout-->
     <div class="container py-3" id="checkout-font">
