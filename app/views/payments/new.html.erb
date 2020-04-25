@@ -4,7 +4,6 @@
     <% end %>
 </div>
 
-<!-- turn this into an alert (warning) -->
 <% if @order.product.size.empty? %>
   <p></p>
 <% else %>
@@ -16,7 +15,6 @@
 
 <div class="checkout-container">
 
-    <!-- restaurant info -->
     <div class="bg-white">
       <div class="container p-3">
         <div class="row">
@@ -34,11 +32,10 @@
       </div>
     </div>
 
-    <!-- restaurant menu / checkout-->
     <div class="container py-3" id="checkout-font">
       <div class="row">
         <div class="col-md-8">
-          <!-- make a card -->
+
           <div class="card p-3 mb-3">
             <h1>Delivery</h1>
             <p><%= @order.product.delivery %></p>
@@ -48,11 +45,9 @@
             <p><%= @order.product.note %></p>
           </div>
 
-          <!-- /menu -->
         </div>
 
         <div class="col-md-4">
-          <!-- checkout -->
           <div class="bg-white border p-3 sticky-top" id="pay-container">
             <div class="d-flex justify-content-between mt-3">
               <p>Subtotal </p>
@@ -81,7 +76,7 @@
                 });
               </script>
           </div>
-          <!-- /checkout -->
+
         </div>
       </div>
     </div>
