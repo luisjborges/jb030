@@ -44,6 +44,14 @@
             <h1>Product Details</h1>
             <p><%= @product.description %></p>
           </div>
+          <% if @product.size.empty? %>
+              <p></p>
+          <% else %>
+          <div class="card p-3 mb-3">
+            <h1>Product Size</h1>
+            <%= image_tag "shirt-size.png", width: '700' %>
+          <% end %>
+          </div>
         </div>
 
         <div class="col-md-4">
