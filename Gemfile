@@ -6,7 +6,6 @@ gem 'stripe_event'
 gem 'money-rails'
 gem 'stripe'
 gem 'bootsnap', require: false
-gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
