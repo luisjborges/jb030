@@ -17,4 +17,8 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def admin?
+    user.admin?
+  end
+
 end

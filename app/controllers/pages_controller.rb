@@ -16,4 +16,8 @@ class PagesController < ApplicationController
   def agb
   end
 
+  def admin
+    @deliveries = Delivery.all
+  end
+
 end

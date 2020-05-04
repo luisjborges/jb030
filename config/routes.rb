@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "faq", to: "pages#faq"
   get "imprint", to: "pages#imprint"
   get "agb", to: "pages#agb"
+  get "admin", to: "pages#admin"
 
   resources :subscribers, only: [:new, :create, :index]
 
