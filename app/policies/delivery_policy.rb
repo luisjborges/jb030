@@ -5,6 +5,10 @@ class DeliveryPolicy < ApplicationPolicy
     end
   end
 
+  def admin?
+    user.admin?
+  end
+
   def create?
     true
   end

@@ -18,6 +18,7 @@ class PagesController < ApplicationController
 
   def admin
     @deliveries = Delivery.all
+    authorize @deliveries
   end
 
 end
