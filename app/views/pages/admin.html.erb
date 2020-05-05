@@ -5,6 +5,7 @@
     <tr>
       <th>Date</th>
       <th>Status</th>
+      <th>Product name</th>
       <th>Buyer's name</th>
       <th>Quantity</th>
       <th>Size</th>
@@ -16,10 +17,11 @@
   <% if @deliveries.nil? %>
     <p>No orders yet.</p>
   <% else %>
-    <tr>
-      <% @deliveries.each do |delivery| %>
+    <% @deliveries.each do |delivery| %>
+      <tr>
         <td><%= delivery.created_at.strftime('%B %e at %l:%M %p') %></td>
         <td><%= delivery.order.state.capitalize %></td>
+        <td><%= delivery.order.product.name %></td>
         <td>
           <span><%= delivery.first_name %></span>
           <span><%= delivery.last_name %></span>
@@ -36,8 +38,8 @@
           <span><%= delivery.country %></span>
         </td>
         <td><%= delivery.order.amount_cents / 100 %>€</td>
-      <% end %>
-    </tr>
+      </tr>
+    <% end %>
   <% end %>
   </table>
 </div>
