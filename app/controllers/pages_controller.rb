@@ -17,8 +17,6 @@ class PagesController < ApplicationController
   end
 
   def admin
-    @shirts = Product.where(sku: 1)
-    @vouchers = Product.where(sku: 2)
     @deliveries = Delivery.all
   end
 

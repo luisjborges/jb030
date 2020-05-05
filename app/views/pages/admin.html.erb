@@ -5,6 +5,7 @@
     <tr>
       <th>Date</th>
       <th>Status</th>
+      <th>Product name</th>
       <th>Buyer's name</th>
       <th>Quantity</th>
       <th>Size</th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= delivery.created_at.strftime('%B %e at %l:%M %p') %></td>
         <td><%= delivery.order.state.capitalize %></td>
+        <td><%= delivery.order.product.name %></td>
         <td>
           <span><%= delivery.first_name %></span>
           <span><%= delivery.last_name %></span>
