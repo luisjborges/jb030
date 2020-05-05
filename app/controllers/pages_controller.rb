@@ -17,13 +17,8 @@ class PagesController < ApplicationController
   end
 
   def admin
-    @orders = Order.all
-    @completed_orders = []
-    @orders.each do |order|
-      checkout_id = order.checkout_session_id
-      @completed_orders << sessions = Stripe::Checkout::Session.retrieve(checkout_id)
-    end
+    @orders = Order.where(state: "paid")
     @deliveries = Delivery.all
-  end
+  endg
 
 end
