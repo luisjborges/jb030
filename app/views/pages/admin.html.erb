@@ -15,7 +15,7 @@
       <th>Price</th>
     </tr>
     <% @orders.each do |order| %>
-      <%= order %>
+      <p><%= order %></p>
     <% end %>
   <% if @deliveries.nil? %>
     <p>No orders yet.</p>
