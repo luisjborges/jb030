@@ -14,7 +14,7 @@
       <th>Address</th>
       <th>Price</th>
     </tr>
-    <% @orders[0].each do |order| %>
+    <% @orders.each do |order| %>
       <p><%= order %></p>
     <% end %>
   <% if @deliveries.nil? %>
