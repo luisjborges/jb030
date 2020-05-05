@@ -1,0 +1,43 @@
+<h2 class="admin">Admin dashboard</h2>
+<%= link_to "Add new product", new_product_path %>
+<div class="orders">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Buyer's name</th>
+      <th>Quantity</th>
+      <th>Size</th>
+      <th>Color</th>
+      <th>E-Mail</th>
+      <th>Address</th>
+      <th>Price</th>
+    </tr>
+  <% if @deliveries.nil? %>
+    <p>No orders yet.</p>
+  <% else %>
+    <tr>
+      <% @deliveries.each do |delivery| %>
+        <td><%= delivery.created_at.strftime('%B %e at %l:%M %p') %></td>
+        <td><%= delivery.order.state.capitalize %></td>
+        <td>
+          <span><%= delivery.first_name %></span>
+          <span><%= delivery.last_name %></span>
+        </td>
+        <td><%= delivery.order.quantity %></td>
+        <td><%= delivery.order.size.present? ? delivery.order.size : "n/a" %></td>
+        <td><%= delivery.order.product.color.present? ? delivery.order.product.color: "n/a" %></td>
+        <td><%= delivery.email %></td>
+        <td>
+          <span><%= delivery.street %></span>
+          <span><%= delivery.house_number %>,</span>
+          <span><%= delivery.city %></span>
+          <span><%= delivery.post_code %>,</span>
+          <span><%= delivery.country %></span>
+        </td>
+        <td><%= delivery.order.amount_cents / 100 %>€</td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
+</div>

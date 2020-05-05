@@ -16,19 +16,19 @@ class ProductsController < ApplicationController
     authorize @product
   end
 
-  # def create
-  #   @product = Product.new(product_params)
-  #   @product.user = current_user
-  #   authorize @product
-  #   @product.save
+  def create
+    @product = Product.new(product_params)
+    @product.user = current_user
+    authorize @product
+    @product.save
 
-  #   if @product.save
-  #     create_pictures
-  #     redirect_to product_path(@product), notice: "Product was succesfully published."
-  #   else
-  #     render :new
-  #   end
-  # end
+    if @product.save
+      create_pictures
+      redirect_to product_path(@product), notice: "Product was succesfully published."
+    else
+      render :new
+    end
+  end
 
   def edit; end
 
