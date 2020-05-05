@@ -37,6 +37,10 @@ class ProductPolicy < ApplicationPolicy
     user_is_owner?
   end
 
+  def admin?
+    user.admin?
+  end
+
   private
 
   def user_is_owner?
