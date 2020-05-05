@@ -19,6 +19,6 @@ class PagesController < ApplicationController
   def admin
     @orders = Order.where(state: "paid")
     @deliveries = Delivery.all
-  endg
+  end
 
 end
