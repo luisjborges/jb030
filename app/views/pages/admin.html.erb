@@ -34,7 +34,7 @@
           <span><%= find_delivery(order.user.id, :post_code) %>,</span>
           <span><%= find_delivery(order.user.id, :country) %></span>
         </td>
-        <td><%= order.amount_cents / 100 %>€</td>
+        <td><%= order.amount_cents %>€</td>
       </tr>
   <% end %>
   </table>
