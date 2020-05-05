@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!
+  include DeliveryHelper
 
   def home
   end
@@ -18,7 +19,6 @@ class PagesController < ApplicationController
 
   def admin
     @orders = Order.where(state: "paid")
-    @deliveries = Delivery.all
   end
 
 end

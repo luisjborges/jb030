@@ -15,34 +15,27 @@
       <th>Price</th>
     </tr>
     <% @orders.each do |order| %>
-      <p><%= order %></p>
-    <% end %>
-  <% if @deliveries.nil? %>
-    <p>No orders yet.</p>
-  <% else %>
-    <% @deliveries.each do |delivery| %>
       <tr>
-        <td><%= delivery.created_at.strftime('%B %e at %l:%M %p') %></td>
-        <td><%= delivery.order.state.capitalize %></td>
-        <td><%= delivery.order.product.name %></td>
+        <td><%= order.created_at.strftime('%B %e at %l:%M %p') %></td>
+        <td><%= order.state.capitalize %></td>
+        <td><%= order.product.name %></td>
         <td>
-          <span><%= delivery.first_name %></span>
-          <span><%= delivery.last_name %></span>
+          <span><%= order.user.first_name %></span>
+          <span><%= order.user.last_name %></span>
         </td>
-        <td><%= delivery.order.quantity %></td>
-        <td><%= delivery.order.size.present? ? delivery.order.size : "n/a" %></td>
-        <td><%= delivery.order.product.color.present? ? delivery.order.product.color: "n/a" %></td>
-        <td><%= delivery.email %></td>
+        <td><%= order.quantity %></td>
+        <td><%= order.size.present? ? order.size : "n/a" %></td>
+        <td><%= order.product.color.present? ? order.product.color: "n/a" %></td>
+        <td><%= order.user.email %></td>
         <td>
-          <span><%= delivery.street %></span>
-          <span><%= delivery.house_number %>,</span>
-          <span><%= delivery.city %></span>
-          <span><%= delivery.post_code %>,</span>
-          <span><%= delivery.country %></span>
+          <span><%= find_delivery(order.user.email, :street) %></span>
+          <span><%= find_delivery(order.user.email, :house_number) %>,</span>
+          <span><%= find_delivery(order.user.email, :city) %></span>
+          <span><%= find_delivery(order.user.email, :post_code) %>,</span>
+          <span><%= find_delivery(order.user.email, :country) %></span>
         </td>
-        <td><%= delivery.order.amount_cents / 100 %>€</td>
+        <td><%= order.amount_cents / 100 %>€</td>
       </tr>
-    <% end %>
   <% end %>
   </table>
 </div>
