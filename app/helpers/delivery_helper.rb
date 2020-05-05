@@ -1,6 +1,6 @@
 module DeliveryHelper
-  def find_delivery(user_email, key)
-    delivery = Delivery.where(email: user_email)
+  def find_delivery(user_id, key)
+    delivery = Delivery.where(user_id: user_id)
     if delivery.empty?
       "n/a"
     else
